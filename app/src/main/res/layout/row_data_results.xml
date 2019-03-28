@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginBottom="@dimen/_5sdp"
+              android:background="@drawable/drawable_subscription_item_bg"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="New York Air Brake LLC Ny"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"/>
+
+        <View android:layout_width="1dp"
+              android:layout_height="@dimen/_30sdp"
+              android:background="@color/colorPrimary"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:text="39"
+                android:layout_weight="0.3"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"/>
+
+    </LinearLayout>
+
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="NY"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"/>
+
+        <View android:layout_width="1dp"
+              android:layout_height="@dimen/_30sdp"
+              android:background="@color/colorPrimary"/>
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:text="39"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="0.2"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"/>
+
+    </LinearLayout>
+
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/colorPrimary"/>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Watertown"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlack"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"/>
+
+    </LinearLayout>
+</LinearLayout>

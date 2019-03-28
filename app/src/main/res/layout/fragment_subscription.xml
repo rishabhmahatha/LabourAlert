@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:background="@color/colorWhite"
+             android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_main_background"
+            android:tint="@color/colorPrimary"
+            android:alpha="0.6"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/back"
+                android:id="@+id/fragment_subscription_tvBack"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="start"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/font_roboto_bold"/>
+
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+            <ScrollView android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:id="@+id/fragment_subscription_ssParent"
+                        android:layout_above="@id/fragment_subscription_llParentBottom">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="@dimen/_10sdp"
+                              android:id="@+id/fragment_subscription_llParent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/system_features"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_15sdp"/>
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/unlimited_mobile_and_website_advanced_access"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/search_nationwide_database"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/create_email_and_mobile_notifications"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/mobile_or_website_charts_and_graphs"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/subscription_options"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_15sdp"/>
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/free_14_days_trial"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/fragment_subscription_tvFreeTrial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/one_time_free_trial"
+                            android:lines="1"
+                            android:background="@drawable/drawable_subscription_item_bg"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/mobile_access"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/fragment_subscription_tvMonthly"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/_159_monthly"
+                            android:lines="1"
+                            android:background="@drawable/drawable_subscription_item_bg"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/quaterly_acess"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/fragment_subscription_tv3Months"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/_249_every_3_months"
+                            android:lines="1"
+                            android:background="@drawable/drawable_subscription_item_bg"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/_6_months_access"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/fragment_subscription_tv6Months"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/_399_every_6_months"
+                            android:lines="1"
+                            android:background="@drawable/drawable_subscription_item_bg"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/yearly_access"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/fragment_subscription_tvOneYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/_799_every_12_months"
+                            android:lines="1"
+                            android:background="@drawable/drawable_subscription_item_bg"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/font_roboto_bold"
+                            android:textSize="@dimen/_13sdp"/>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/fragment_subscription_llParentBottom"
+                    android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/fragment_subscription_tvMoreDetails"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="start"
+                        android:textSize="@dimen/_15sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/font_roboto_bold"
+                        android:text="@string/more_details"/>
+
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/fragment_subscription_tvRestorePurchase"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="@dimen/_15sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/font_roboto_bold"
+                        android:text="@string/restore_purchases"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_splash_bg"
+                android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/colorPrimary"
+                  android:padding="@dimen/_10sdp"
+                  android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:text="@string/labour_alerts"
+                                                     android:textColor="@color/colorWhite"
+                                                     android:textSize="@dimen/_32sdp"
+                                                     android:lines="1"
+                                                     android:layout_marginTop="@dimen/_120sdp"
+                                                     android:maxLines="1"
+                                                     android:drawableEnd="@android:drawable/ic_dialog_alert"
+                                                     android:fontFamily="@font/font_roboto_medium"
+                                                     android:gravity="center"/>
+
+        <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:fontFamily="@font/font_roboto_light"
+                                                     android:textColor="@color/colorWhite"
+                                                     android:textSize="@dimen/_12sdp"
+                                                     android:layout_marginTop="@dimen/_10sdp"
+                                                     android:padding="@dimen/_10sdp"
+                                                     android:lineSpacingExtra="@dimen/_3sdp"
+                                                     android:text="@string/labouralerts_com_is_a_service_that_allow_users_to_receive_alerts_about_employment_loss_notificaiton_near_you"/>
+
+
+    </LinearLayout>
+
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true">
+
+        <android.support.v7.widget.AppCompatImageView android:layout_width="match_parent"
+                                                      android:layout_height="@dimen/_200sdp"
+                                                      android:background="@color/colorWhite"/>
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_gravity="bottom"
+                      android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView android:layout_width="0dp" android:layout_height="match_parent"
+                                                         android:id="@+id/activity_splash_tvLogIn"
+                                                         android:layout_weight="1"
+                                                         android:background="@color/colorGray"
+                                                         android:lines="1"
+                                                         android:maxLines="1"
+                                                         android:text="@string/log_in"
+                                                         android:gravity="center"
+                                                         android:paddingLeft="@dimen/_10sdp"
+                                                         android:paddingRight="@dimen/_10sdp"
+                                                         android:paddingTop="@dimen/_15sdp"
+                                                         android:paddingBottom="@dimen/_15sdp"
+                                                         android:textSize="@dimen/_20sdp"
+                                                         android:fontFamily="@font/font_roboto_bold"
+                                                         android:textColor="@color/colorPrimary"/>
+
+
+            <android.support.v7.widget.AppCompatTextView android:layout_width="0dp" android:layout_height="match_parent"
+                                                         android:id="@+id/activity_splash_tvViewResult"
+                                                         android:lines="1"
+                                                         android:maxLines="1"
+                                                         android:layout_weight="1"
+                                                         android:background="@color/colorPrimary"
+                                                         android:text="@string/view_results"
+                                                         android:gravity="center"
+                                                         android:paddingLeft="@dimen/_10sdp"
+                                                         android:paddingRight="@dimen/_10sdp"
+                                                         android:paddingTop="@dimen/_15sdp"
+                                                         android:paddingBottom="@dimen/_15sdp"
+                                                         android:textSize="@dimen/_20sdp"
+                                                         android:fontFamily="@font/font_roboto_bold"
+                                                         android:textColor="@color/colorWhite"/>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

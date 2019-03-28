@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">LabourAlert</string>
+    <string name="cancel">Cancel</string>
+    <string name="settings">Setting</string>
+    <string name="ok">ok</string>
+    <string name="alert_no_internet">No internet connection try again later !</string>
+
+
+   <!--Splash Screen Strings-->
+    <string name="labour_alerts">LABOUR ALERTS</string>
+    <string name="labouralerts_com_is_a_service_that_allow_users_to_receive_alerts_about_employment_loss_notificaiton_near_you">
+        Labouralerts.com is a service that allow users to receive alerts about employment loss notificaiton near you.
+    </string>
+    <string name="log_in">LOG IN</string>
+    <string name="view_results">VIEW RESULTS</string>
+    <!--Splash Screen Strings-->
+
+    <!--Login Screen Strings-->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="_login_small">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="back">Back</string>
+    <!--Login Screen Strings-->
+
+
+    <!--Subscription Screen Strings-->
+    <string name="system_features">System features:</string>
+    <string name="unlimited_mobile_and_website_advanced_access">- Unlimited mobile and website advanced access.</string>
+    <string name="search_nationwide_database">- Search nationwide database.</string>
+    <string name="create_email_and_mobile_notifications">- Create email and mobile notifications.</string>
+    <string name="mobile_or_website_charts_and_graphs">- Mobile or website Charts and Graphs.</string>
+    <string name="subscription_options">Subscription Options:</string>
+    <string name="free_14_days_trial">Free 14 Days Trial</string>
+    <string name="one_time_free_trial">One Time Free Trial</string>
+    <string name="mobile_access">Mobile Access</string>
+    <string name="_159_monthly">$159 Monthly</string>
+    <string name="quaterly_acess">Quaterly Acess</string>
+    <string name="_249_every_3_months">$249 every 3 months</string>
+    <string name="_6_months_access">6 Months Access</string>
+    <string name="_399_every_6_months">$399 every 6 months</string>
+    <string name="yearly_access">Yearly Access</string>
+    <string name="_799_every_12_months">$799 every 12 months</string>
+    <string name="more_details">More Details</string>
+    <string name="restore_purchases">Restore Purchases</string>
+
+    <!--Subscription Screen Strings-->
+</resources>

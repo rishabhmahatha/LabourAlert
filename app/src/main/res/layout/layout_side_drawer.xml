@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:lines="1"
+                                                 android:maxLines="1"
+                                                 android:background="@color/colorPrimary"
+                                                 android:text="@string/labour_alerts"
+                                                 android:paddingLeft="@dimen/_10sdp"
+                                                 android:paddingRight="@dimen/_10sdp"
+                                                 android:paddingTop="@dimen/_10sdp"
+                                                 android:paddingBottom="@dimen/_10sdp"
+                                                 android:textSize="@dimen/_15sdp"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textColor="@color/colorBlack"/>
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Search"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Advanced Search"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Top 10"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="AlertNotification"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Alert Manager"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:lines="1"
+                                                 android:maxLines="1"
+                                                 android:background="@color/colorPrimary"
+                                                 android:text="Settings"
+                                                 android:paddingLeft="@dimen/_10sdp"
+                                                 android:paddingRight="@dimen/_10sdp"
+                                                 android:paddingTop="@dimen/_10sdp"
+                                                 android:paddingBottom="@dimen/_10sdp"
+                                                 android:textSize="@dimen/_15sdp"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textColor="@color/colorBlack"/>
+
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Account"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:lines="1"
+                                                   android:maxLines="1"
+                                                 android:background="@color/colorPrimary"
+                                                 android:text="About"
+                                                 android:paddingLeft="@dimen/_10sdp"
+                                                 android:paddingRight="@dimen/_10sdp"
+                                                 android:paddingTop="@dimen/_10sdp"
+                                                 android:paddingBottom="@dimen/_10sdp"
+                                                 android:textSize="@dimen/_15sdp"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textColor="@color/colorBlack"/>
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="About Us"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Terms and Conditions"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Log Out"
+                                                 android:layout_marginTop="@dimen/_30sdp"
+                                                 android:padding="@dimen/_10sdp"
+                                                 android:textColor="@color/colorPrimary"
+                                                 android:fontFamily="@font/font_roboto_bold"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+</LinearLayout>
