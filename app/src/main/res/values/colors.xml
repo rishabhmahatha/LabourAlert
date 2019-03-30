@@ -10,6 +10,7 @@
     <color name="colorRed">#FF0000</color>
     <color name="colorSilver">#C0C0C0</color>
     <color name="colorGray">#808080</color>
+    <color name="colorGrayLight">#10808080</color>
     <color name="colorOlive">#808000</color>
     <color name="colorPurple">#800080</color>
     <color name="colorMaroon">#800000</color>

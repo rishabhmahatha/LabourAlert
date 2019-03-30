@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@color/colorSilver"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="@string/label_result"
+                    android:textSize="@dimen/_15sdp"
+                    android:background="@drawable/drawable_selector_bg_button"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlack"
+            />
+
+
+            <android.support.v7.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="@string/label_graph"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/drawable_selector_bg_button"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlack"
+            />
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/drawable_rounded_rectangle_white_bg"
+                    android:src="@drawable/ic_share"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorBlack"
+            />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/row_data_results"
+    />
+
+</LinearLayout>

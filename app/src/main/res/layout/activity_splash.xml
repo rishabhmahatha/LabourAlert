@@ -62,7 +62,7 @@
                                                          android:paddingTop="@dimen/_15sdp"
                                                          android:paddingBottom="@dimen/_15sdp"
                                                          android:textSize="@dimen/_20sdp"
-                                                         android:fontFamily="@font/font_roboto_bold"
+                                                         android:fontFamily="@font/font_roboto_regular"
                                                          android:textColor="@color/colorPrimary"/>
 
 
@@ -79,7 +79,7 @@
                                                          android:paddingTop="@dimen/_15sdp"
                                                          android:paddingBottom="@dimen/_15sdp"
                                                          android:textSize="@dimen/_20sdp"
-                                                         android:fontFamily="@font/font_roboto_bold"
+                                                         android:fontFamily="@font/font_roboto_regular"
                                                          android:textColor="@color/colorWhite"/>
 
 

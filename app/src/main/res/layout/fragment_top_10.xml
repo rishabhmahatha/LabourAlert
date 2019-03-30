@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/colorWhite"
+              android:padding="@dimen/_10sdp"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:padding="@dimen/_5sdp"
+                  android:background="@drawable/drawable_subscription_item_bg"
+                  android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatButton android:layout_width="0dp"
+                                                   android:layout_weight="1"
+                                                   android:text="@string/label_companies"
+                                                   android:textAllCaps="false"
+                                                   android:layout_margin="@dimen/_3sdp"
+                                                   android:background="@drawable/drawable_selector_bg"
+                                                   android:textSize="@dimen/_15sdp"
+                                                   android:layout_height="@dimen/_40sdp"/>
+
+
+        <android.support.v7.widget.AppCompatButton android:layout_width="0dp"
+                                                   android:layout_weight="1"
+                                                   android:text="@string/label_states"
+                                                   android:layout_margin="@dimen/_3sdp"
+                                                   android:background="@drawable/drawable_selector_bg"
+                                                   android:textAllCaps="false"
+                                                   android:textSize="@dimen/_15sdp"
+                                                   android:layout_height="@dimen/_40sdp"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  android:padding="@dimen/_5sdp"
+                  android:background="@drawable/drawable_subscription_item_bg"
+                  android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/label_1y"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15sdp"
+        />
+
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/label_3m"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15sdp"
+        />
+
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/label_2m"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15sdp"
+        />
+
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/label_1m"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_15sdp"
+        />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            tools:listitem="@layout/row_top_10"
+    />
+</LinearLayout>

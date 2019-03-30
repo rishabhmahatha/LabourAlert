@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:padding="@dimen/_10sdp"
+              android:background="@color/colorWhite"
+              android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="KapStone Container Corporation"
+                                                 android:maxLines="1"
+                                                 android:padding="@dimen/_2sdp"
+                                                 android:textColor="@color/colorBlack"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Jobs Imapacted : 67"
+                                                 android:maxLines="1"
+                                                 android:padding="@dimen/_2sdp"
+                                                 android:textColor="@color/colorBlack"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="Oakland"
+                                                 android:maxLines="1"
+                                                 android:padding="@dimen/_2sdp"
+                                                 android:textColor="@color/colorBlack"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="CA"
+                                                 android:maxLines="1"
+                                                 android:padding="@dimen/_2sdp"
+                                                 android:textColor="@color/colorBlack"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/colorBlack"
+    />
+
+
+</LinearLayout>

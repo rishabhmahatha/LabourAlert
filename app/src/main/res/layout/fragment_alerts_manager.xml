@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="@dimen/_10sdp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_right_arrow"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_company"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/font_roboto_regular"
+                android:textSize="@dimen/_15sdp"
+        />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/drawable_subscription_item_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_gm_lordstown_closure"
+                    android:maxLines="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/font_roboto_regular"
+                    android:textSize="@dimen/_15sdp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_right_arrow"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_states"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/font_roboto_regular"
+                android:textSize="@dimen/_15sdp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/drawable_subscription_item_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_gm_lordstown_closure"
+                    android:maxLines="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/font_roboto_regular"
+                    android:textSize="@dimen/_15sdp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/drawable_subscription_item_bg"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_gm_lordstown_closure"
+                    android:maxLines="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/font_roboto_regular"
+                    android:textSize="@dimen/_15sdp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

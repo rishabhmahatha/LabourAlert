@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:background="@color/colorWhite"
+              android:padding="@dimen/_5sdp"
+              android:layout_height="wrap_content">
 
+    <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="1"
+                                                 android:gravity="center"
+                                                 android:layout_gravity="center"
+                                                 android:padding="@dimen/_5sdp"
+                                                 android:maxLines="1"
+                                                 android:textColor="@color/colorDarkGray"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"/>
+
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="0dp"
+                                                 android:layout_weight="1"
+                                                 android:layout_height="wrap_content"
+                                                 android:gravity="start"
+                                                 android:text="Gm Lordstown clos"
+                                                 android:ellipsize="end"
+                                                 android:layout_gravity="center"
+                                                 android:maxLines="1"
+                                                 android:padding="@dimen/_5sdp"
+                                                 android:textColor="@color/colorDarkGray"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"/>
+
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="0dp"
+                                                 android:layout_height="wrap_content"
+                                                 android:text="1607"
+                                                 android:maxLines="1"
+                                                 android:gravity="start"
+                                                 android:layout_weight="0.4"
+                                                 android:layout_gravity="center"
+                                                 android:padding="@dimen/_5sdp"
+                                                 android:textColor="@color/colorDarkGray"
+                                                 android:fontFamily="@font/font_roboto_regular"
+                                                 android:textSize="@dimen/_15sdp"
+    />
+
+
+    <android.support.v7.widget.AppCompatImageView android:layout_width="0dp"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_weight="0.2"
+                                                  android:layout_gravity="center"
+                                                  android:padding="@dimen/_5sdp"
+                                                  android:textColor="@color/colorDarkGray"
+                                                  android:src="@drawable/ic_bell_normal"
+                                                  android:fontFamily="@font/font_roboto_regular"
+                                                  android:textSize="@dimen/_15sdp"
+    />
 </LinearLayout>
