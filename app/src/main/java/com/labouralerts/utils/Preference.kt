@@ -10,34 +10,54 @@ import com.labouralerts.R
  * Preference class created
  */
 class Preference private constructor() {
+    val PREF_USER_ID = "USER_ID"
+    val PREF_FIRST_NAME = "FIRST_NAME"
+    val PREF_LAST_NAME = "LAST_NAME"
+    val PREF_SERVICE_ID = "SERVICE_ID"
+    val PREF_RENEW_DATE = "RENEW_DATE"
+    val PREF_ACCOUNT_TYPE = "ACCOUNT_TYPE"
+
+
 
     private val sharedPreferences: SharedPreferences =
-        LabourAlert.instance!!.getSharedPreferences(LabourAlert.instance!!.getString(R.string.app_name), Context.MODE_PRIVATE)
+        LabourAlert.instance!!.getSharedPreferences(
+            LabourAlert.instance!!.getString(R.string.app_name),
+            Context.MODE_PRIVATE
+        )
 
 
     var isLogin: Boolean
         get() = sharedPreferences.getBoolean(KEY_IS_LOGIN, false)
         set(isLoggedIn) = sharedPreferences.edit().putBoolean(KEY_IS_LOGIN, isLoggedIn).apply()
 
-    object FCMPreference {
-        private const val PREFERENCE_FCM_TOKEN = "FCM_TOKEN"
-        private const val PREFERENCE_FCM_FILE_NAME = "FCM"
+    fun setData(key: String, value: String) {
+        sharedPreferences.edit().putString(key, value).apply()
+    }
 
-        var fcmToken: String?
-            get() {
+    fun getData(key: String, defaultValue: String) {
+        sharedPreferences.getString(key, defaultValue)
+    }
 
-                val preferences = LabourAlert.instance!!.getSharedPreferences(PREFERENCE_FCM_FILE_NAME, Context.MODE_PRIVATE)
-                return preferences.getString(PREFERENCE_FCM_TOKEN, "")
-            }
-            set(token) {
+    fun getStringData(key: String, defaultValue: String): String? {
+        return sharedPreferences.getString(key, defaultValue)
+    }
 
-                val preferences = LabourAlert.instance!!.getSharedPreferences(PREFERENCE_FCM_FILE_NAME, Context.MODE_PRIVATE)
 
-                val editor = preferences.edit()
-                editor.putString(PREFERENCE_FCM_TOKEN, token)
-                editor.apply()
-            }
+    fun getBooleanData(key: String, defaultValue: Boolean): Boolean {
+        return sharedPreferences.getBoolean(key, defaultValue)
+    }
 
+    fun setBooleanData(key: String, value: Boolean) {
+        sharedPreferences.edit().putBoolean(key, value).apply()
+    }
+
+
+    fun getIntData(key: String, defaultValue: Int): Int {
+        return sharedPreferences.getInt(key, defaultValue)
+    }
+
+    fun setIntData(key: String, value: Int) {
+        sharedPreferences.edit().putInt(key, value).apply()
     }
 
 

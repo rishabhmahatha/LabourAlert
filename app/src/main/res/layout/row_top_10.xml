@@ -9,6 +9,7 @@
     <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                  android:layout_height="wrap_content"
                                                  android:text="1"
+                                                 android:id="@+id/row_data_top10_tvSNo"
                                                  android:gravity="center"
                                                  android:layout_gravity="center"
                                                  android:padding="@dimen/_5sdp"
@@ -19,6 +20,7 @@
 
 
     <android.support.v7.widget.AppCompatTextView android:layout_width="0dp"
+                                                 android:id="@+id/row_data_top10_tvName"
                                                  android:layout_weight="1"
                                                  android:layout_height="wrap_content"
                                                  android:gravity="start"
@@ -33,6 +35,7 @@
 
 
     <android.support.v7.widget.AppCompatTextView android:layout_width="0dp"
+                                                 android:id="@+id/row_data_top10_tvNumber"
                                                  android:layout_height="wrap_content"
                                                  android:text="1607"
                                                  android:maxLines="1"
@@ -47,12 +50,13 @@
 
 
     <android.support.v7.widget.AppCompatImageView android:layout_width="0dp"
+                                                  android:id="@+id/row_data_top10_ivNotificationIcon"
                                                   android:layout_height="wrap_content"
                                                   android:layout_weight="0.2"
                                                   android:layout_gravity="center"
                                                   android:padding="@dimen/_5sdp"
                                                   android:textColor="@color/colorDarkGray"
-                                                  android:src="@drawable/ic_bell_normal"
+                                                  android:src="@drawable/drawable_selector_notification_icon"
                                                   android:fontFamily="@font/font_roboto_regular"
                                                   android:textSize="@dimen/_15sdp"
     />

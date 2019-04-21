@@ -71,8 +71,19 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_search_result_rvSearchResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            tools:listitem="@layout/row_data_results"
+    />
+
+    <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/fragment_search_result_rvGraphResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
             tools:listitem="@layout/row_data_results"
     />
 

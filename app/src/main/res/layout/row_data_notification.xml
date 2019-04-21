@@ -6,44 +6,68 @@
               android:background="@color/colorWhite"
               android:layout_height="wrap_content">
 
-    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
-                                                 android:layout_height="wrap_content"
-                                                 android:text="KapStone Container Corporation"
-                                                 android:maxLines="1"
-                                                 android:padding="@dimen/_2sdp"
-                                                 android:textColor="@color/colorBlack"
-                                                 android:fontFamily="@font/font_roboto_regular"
-                                                 android:textSize="@dimen/_15sdp"
+    <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/ow_data_notification_tvTitleFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KapStone Container Corporation"
+            android:maxLines="1"
+            android:padding="@dimen/_2sdp"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/font_roboto_regular"
+            android:textSize="@dimen/_15sdp"
     />
 
-    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
-                                                 android:layout_height="wrap_content"
-                                                 android:text="Jobs Imapacted : 67"
-                                                 android:maxLines="1"
-                                                 android:padding="@dimen/_2sdp"
-                                                 android:textColor="@color/colorBlack"
-                                                 android:fontFamily="@font/font_roboto_regular"
-                                                 android:textSize="@dimen/_15sdp"
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+    >
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/ow_data_notification_tvTitleSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jobs Imapacted:"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/font_roboto_regular"
+                android:textSize="@dimen/_15sdp"/>
+
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/ow_data_notification_tvTitleSecondCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="67"
+                android:maxLines="1"
+                android:padding="@dimen/_2sdp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/font_roboto_regular"
+                android:textSize="@dimen/_15sdp"/>
+    </LinearLayout>
+    <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/ow_data_notification_tvTitleThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oakland"
+            android:maxLines="1"
+            android:padding="@dimen/_2sdp"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/font_roboto_regular"
+            android:textSize="@dimen/_15sdp"
     />
 
-    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
-                                                 android:layout_height="wrap_content"
-                                                 android:text="Oakland"
-                                                 android:maxLines="1"
-                                                 android:padding="@dimen/_2sdp"
-                                                 android:textColor="@color/colorBlack"
-                                                 android:fontFamily="@font/font_roboto_regular"
-                                                 android:textSize="@dimen/_15sdp"
-    />
-
-    <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
-                                                 android:layout_height="wrap_content"
-                                                 android:text="CA"
-                                                 android:maxLines="1"
-                                                 android:padding="@dimen/_2sdp"
-                                                 android:textColor="@color/colorBlack"
-                                                 android:fontFamily="@font/font_roboto_regular"
-                                                 android:textSize="@dimen/_15sdp"
+    <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/ow_data_notification_tvTitleFourth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CA"
+            android:maxLines="1"
+            android:padding="@dimen/_2sdp"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/font_roboto_regular"
+            android:textSize="@dimen/_15sdp"
     />
 
     <View

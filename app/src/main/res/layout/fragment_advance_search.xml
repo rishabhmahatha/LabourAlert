@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="match_parent"
             android:layout_width="match_parent">
@@ -32,6 +31,7 @@
             />
 
             <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/fragment_advance_search_etCompany"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:hint="@string/hint_company"
@@ -67,15 +67,22 @@
                     android:textSize="@dimen/_15sdp"
             />
 
-            <android.support.v7.widget.AppCompatEditText
+            <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:hint="@string/hint_states"-->
+            <!--android:lines="1"-->
+            <!--android:maxLines="1"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:fontFamily="@font/font_roboto_regular"-->
+            <!--android:background="@drawable/drawable_rectangle_edit_text_bg"-->
+            <!--android:layout_height="match_parent"/>-->
+
+            <Spinner
+                    android:id="@+id/fragment_advance_search_spCity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:hint="@string/hint_states"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:fontFamily="@font/font_roboto_regular"
                     android:background="@drawable/drawable_rectangle_edit_text_bg"
                     android:layout_height="match_parent"/>
 
@@ -103,31 +110,46 @@
                     android:textSize="@dimen/_15sdp"
             />
 
-            <android.support.v7.widget.AppCompatEditText
+            <Spinner
+                    android:id="@+id/fragment_advance_search_spYearStart"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
-                    android:hint="@string/hint_start"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:fontFamily="@font/font_roboto_regular"
                     android:layout_marginEnd="@dimen/_2sdp"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
+                    android:background="@drawable/drawable_rectangle_edit_text_bg"
+                    android:layout_height="match_parent"/>
+            <Spinner
+                    android:id="@+id/fragment_advance_search_spYearEnd"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_marginStart="@dimen/_2sdp"
                     android:background="@drawable/drawable_rectangle_edit_text_bg"
                     android:layout_height="match_parent"/>
 
-            <android.support.v7.widget.AppCompatEditText
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:hint="@string/hint_end"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:fontFamily="@font/font_roboto_regular"
-                    android:background="@drawable/drawable_rectangle_edit_text_bg"
-                    android:layout_height="match_parent"/>
+            <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:hint="@string/hint_start"-->
+            <!--android:lines="1"-->
+            <!--android:maxLines="1"-->
+            <!--android:fontFamily="@font/font_roboto_regular"-->
+            <!--android:layout_marginEnd="@dimen/_2sdp"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:background="@drawable/drawable_rectangle_edit_text_bg"-->
+            <!--android:layout_height="match_parent"/>-->
+
+            <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:hint="@string/hint_end"-->
+            <!--android:layout_marginStart="@dimen/_2sdp"-->
+            <!--android:lines="1"-->
+            <!--android:maxLines="1"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:fontFamily="@font/font_roboto_regular"-->
+            <!--android:background="@drawable/drawable_rectangle_edit_text_bg"-->
+            <!--android:layout_height="match_parent"/>-->
 
         </LinearLayout>
 
@@ -151,31 +173,47 @@
                     android:textSize="@dimen/_15sdp"
             />
 
-            <android.support.v7.widget.AppCompatEditText
+
+            <Spinner
+                    android:id="@+id/fragment_advance_search_spMonthStart"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
-                    android:hint="@string/hint_start"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:fontFamily="@font/font_roboto_regular"
                     android:layout_marginEnd="@dimen/_2sdp"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
+                    android:background="@drawable/drawable_rectangle_edit_text_bg"
+                    android:layout_height="match_parent"/>
+            <Spinner
+                    android:id="@+id/fragment_advance_search_spMonthEnd"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_marginStart="@dimen/_2sdp"
                     android:background="@drawable/drawable_rectangle_edit_text_bg"
                     android:layout_height="match_parent"/>
 
-            <android.support.v7.widget.AppCompatEditText
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:hint="@string/hint_end"
-                    android:layout_marginStart="@dimen/_2sdp"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:fontFamily="@font/font_roboto_regular"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:background="@drawable/drawable_rectangle_edit_text_bg"
-                    android:layout_height="match_parent"/>
+            <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:hint="@string/hint_start"-->
+            <!--android:lines="1"-->
+            <!--android:maxLines="1"-->
+            <!--android:fontFamily="@font/font_roboto_regular"-->
+            <!--android:layout_marginEnd="@dimen/_2sdp"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:background="@drawable/drawable_rectangle_edit_text_bg"-->
+            <!--android:layout_height="match_parent"/>-->
+
+            <!--<android.support.v7.widget.AppCompatEditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:hint="@string/hint_end"-->
+            <!--android:layout_marginStart="@dimen/_2sdp"-->
+            <!--android:lines="1"-->
+            <!--android:maxLines="1"-->
+            <!--android:fontFamily="@font/font_roboto_regular"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:background="@drawable/drawable_rectangle_edit_text_bg"-->
+            <!--android:layout_height="match_parent"/>-->
         </LinearLayout>
 
         <LinearLayout
@@ -199,6 +237,7 @@
             />
 
             <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/fragment_advance_search_etCity"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:hint="@string/hint_city"
@@ -233,6 +272,7 @@
             />
 
             <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/fragment_advance_search_etCountry"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:hint="@string/hint_country"
@@ -246,13 +286,14 @@
         </LinearLayout>
 
         <android.support.v7.widget.AppCompatButton
+                android:id="@+id/fragment_advance_search_btnSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/drawable_blue_button_bg"
                 android:text="@string/label_search"
                 android:textAllCaps="false"
                 android:fontFamily="@font/font_roboto_regular"
-                android:id="@+id/fragment_login_btnLogin"
+
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/_18sdp"
                 android:padding="@dimen/_10sdp"

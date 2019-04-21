@@ -1,0 +1,36 @@
+{
+  "project_info": {
+    "project_number": "757144981819",
+    "firebase_url": "https://labour-alert.firebaseio.com",
+    "project_id": "labour-alert",
+    "storage_bucket": "labour-alert.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757144981819:android:fcaa73413cc7db29",
+        "android_client_info": {
+          "package_name": "com.labouralerts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMjOWKehupipcv5zY5wLW1bgnC8FC4T84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757144981819-f23rq8vnvcr4s48qnegggsb6ht1nq8f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8785326228290155~7489316207"
+    }
+  ],
+  "configuration_version": "1"
+}

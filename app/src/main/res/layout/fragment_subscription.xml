@@ -22,14 +22,16 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_10sdp"
                 android:text="@string/back"
+                android:visibility="gone"
                 android:id="@+id/fragment_subscription_tvBack"
                 android:textSize="@dimen/_15sdp"
                 android:layout_gravity="start"
                 android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/font_roboto_bold"/>
+                android:fontFamily="@font/font_roboto_regular"/>
 
 
         <RelativeLayout android:layout_width="match_parent"
+
                         android:layout_height="wrap_content">
 
 
@@ -37,11 +39,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_10sdp"
                         android:id="@+id/fragment_subscription_ssParent"
-                        android:layout_above="@id/fragment_subscription_llParentBottom">
+            >
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                               android:orientation="vertical"
                               android:padding="@dimen/_10sdp"
+                              android:layout_marginTop="@dimen/_10sdp"
                               android:id="@+id/fragment_subscription_llParent">
 
                     <android.support.v7.widget.AppCompatTextView
@@ -52,7 +55,7 @@
                             android:lines="1"
                             android:maxLines="1"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_15sdp"/>
 
 
@@ -65,7 +68,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -77,7 +80,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -89,7 +92,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -101,7 +104,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
 
@@ -114,7 +117,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_15sdp"/>
 
 
@@ -122,13 +125,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/free_14_days_trial"
+                            android:text="Free 30 Days Trial"
                             android:lines="1"
                             android:maxLines="1"
                             android:textStyle="bold"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -144,7 +147,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
 
@@ -155,15 +158,17 @@
                             android:text="@string/mobile_access"
                             android:lines="1"
                             android:maxLines="1"
+                            android:visibility="gone"
                             android:textStyle="bold"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
                             android:id="@+id/fragment_subscription_tvMonthly"
                             android:layout_width="match_parent"
+                            android:visibility="gone"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:padding="@dimen/_8sdp"
@@ -174,7 +179,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -186,9 +191,10 @@
                             android:lines="1"
                             android:maxLines="1"
                             android:textStyle="bold"
+                            android:visibility="gone"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -198,13 +204,14 @@
                             android:layout_gravity="center"
                             android:padding="@dimen/_8sdp"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:text="@string/_249_every_3_months"
                             android:lines="1"
                             android:background="@drawable/drawable_subscription_item_bg"
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -217,7 +224,7 @@
                             android:textStyle="bold"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -233,7 +240,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -246,7 +253,7 @@
                             android:textStyle="bold"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
                     <android.support.v7.widget.AppCompatTextView
@@ -262,7 +269,7 @@
                             android:maxLines="1"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textColor="@color/colorBlack"
-                            android:fontFamily="@font/font_roboto_bold"
+                            android:fontFamily="@font/font_roboto_regular"
                             android:textSize="@dimen/_13sdp"/>
 
 
@@ -286,7 +293,7 @@
                         android:gravity="start"
                         android:textSize="@dimen/_15sdp"
                         android:textColor="@color/colorPrimary"
-                        android:fontFamily="@font/font_roboto_bold"
+                        android:fontFamily="@font/font_roboto_regular"
                         android:text="@string/more_details"/>
 
 
@@ -299,7 +306,7 @@
                         android:padding="@dimen/_10sdp"
                         android:textSize="@dimen/_15sdp"
                         android:textColor="@color/colorPrimary"
-                        android:fontFamily="@font/font_roboto_bold"
+                        android:fontFamily="@font/font_roboto_regular"
                         android:text="@string/restore_purchases"/>
             </LinearLayout>
         </RelativeLayout>

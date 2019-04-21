@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#3c93bc</color>
     <color name="colorAccent">#74cdf7</color>
 
+    <color name="colorSnackbarErrorBg">#FFAFB9</color>
+    <color name="colorSnackbarErrorText">#D0021B</color>
+    <color name="colorSnackbarSuccessBg">#D3FFCA</color>
+    <color name="colorSnackbarSuccessText">#3F7E31</color>
+
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorYellow">#FFFF00</color>
     <color name="colorFuchsia">#FF00FF</color>

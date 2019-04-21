@@ -17,7 +17,7 @@ class SplashActivity : BaseActivity() {
      */
     private var handler: Handler? = null
     private val runnable = Runnable {
-        val intent = Intent(this, LoginSignUpActivity::class.java);
+        val intent = Intent(this, OptionActivity::class.java);
         startActivity(intent)
         finish()
     }

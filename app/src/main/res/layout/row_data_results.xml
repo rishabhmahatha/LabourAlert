@@ -14,10 +14,11 @@
             android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/row_data_result_tvTitleFirst"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="New York Air Brake LLC Ny"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
                 android:padding="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:textColor="@color/colorBlack"
@@ -30,10 +31,11 @@
               android:background="@color/colorPrimary"/>
 
         <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/row_data_result_tvTitleFirstCount"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
                 android:padding="@dimen/_5sdp"
                 android:layout_height="match_parent"
                 android:text="39"
@@ -59,9 +61,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="NY"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
                 android:padding="@dimen/_5sdp"
                 android:layout_weight="1"
+                android:id="@+id/row_data_result_tvTitleSecond"
                 android:textColor="@color/colorBlack"
                 android:ellipsize="end"
                 android:lines="1"
@@ -72,14 +75,14 @@
               android:background="@color/colorPrimary"/>
 
         <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/row_data_result_ivNotificaiton"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_15sdp"
                 android:padding="@dimen/_5sdp"
                 android:layout_height="match_parent"
-                android:text="39"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/drawable_selector_notification_icon"
                 android:layout_weight="0.2"
                 android:ellipsize="end"
                 android:lines="1"
@@ -101,9 +104,10 @@
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="0dp"
+                android:id="@+id/row_data_result_tvTitleThird"
                 android:layout_height="match_parent"
                 android:text="Watertown"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
                 android:padding="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:textColor="@color/colorBlack"

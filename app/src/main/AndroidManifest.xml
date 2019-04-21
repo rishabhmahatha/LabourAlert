@@ -2,15 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools" package="com.labouralerts">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".LabourAlert"
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_app_icon"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@drawable/ic_app_icon"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="@string/admob_app_id"/>
 
         <activity android:name=".ui.activity.SplashActivity"
                   android:screenOrientation="portrait">
@@ -26,6 +32,9 @@
                   android:windowSoftInputMode="stateAlwaysHidden"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name=".ui.activity.OptionActivity"
+                  android:windowSoftInputMode="stateAlwaysHidden"
+                  android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.activity.HomeActivity"
                   android:windowSoftInputMode="stateAlwaysHidden"

@@ -25,9 +25,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //  Support
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -45,5 +42,21 @@ dependencies {
 
     //Multidex
     implementation'com.android.support:multidex:1.0.3'
+
+    //InApp Purchase Dependency
+    implementation 'com.android.billingclient:billing:1.2'
+
+    //Ad Mob Dependency
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-ads:17.2.0'
+
+    /*Networking*/
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+
 }
+apply plugin: 'com.google.gms.google-services'
 

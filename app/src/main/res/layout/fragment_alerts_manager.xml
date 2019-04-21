@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:padding="@dimen/_10sdp"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
     <LinearLayout
+            android:id="@+id/fragment_alerts_manager_llCompany"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
             android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_height="wrap_content">
 
         <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_right_arrow"/>
+                android:id="@+id/fragment_alerts_manager_ivArrowCompany"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/ic_right_arrow"/>
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -34,48 +38,38 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/_200sdp"
+            android:visibility="gone"
+            android:id="@+id/fragment_alerts_manager_llCompanyChild"
+    >
 
-        <LinearLayout
-                android:padding="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/drawable_subscription_item_bg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_gm_lordstown_closure"
-                    android:maxLines="1"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:textColor="@color/colorBlack"
-                    android:fontFamily="@font/font_roboto_regular"
-                    android:textSize="@dimen/_15sdp"/>
-
-            <android.support.v7.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/fragment_alert_manager_rvNotificationCompany" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp"
+                tools:listitem="@layout/row_data_company_notification"
+        />
 
     </LinearLayout>
 
 
     <LinearLayout
+            android:id="@+id/fragment_alerts_manager_llStates"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
             android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_height="wrap_content">
 
         <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_right_arrow"/>
+                android:id="@+id/fragment_alerts_manager_ivArrowStates"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/ic_right_arrow"/>
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -92,59 +86,20 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/fragment_alerts_manager_llStatesChild"
+            android:layout_height="@dimen/_200sdp"
             android:orientation="vertical">
 
-        <LinearLayout
-                android:padding="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/drawable_subscription_item_bg"
+        <android.support.v7.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/fragment_alert_manager_rvNotificationState"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_gm_lordstown_closure"
-                    android:maxLines="1"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:textColor="@color/colorBlack"
-                    android:fontFamily="@font/font_roboto_regular"
-                    android:textSize="@dimen/_15sdp"/>
-
-            <android.support.v7.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-                android:padding="@dimen/_5sdp"
-                android:background="@drawable/drawable_subscription_item_bg"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_gm_lordstown_closure"
-                    android:maxLines="1"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:textColor="@color/colorBlack"
-                    android:fontFamily="@font/font_roboto_regular"
-                    android:textSize="@dimen/_15sdp"/>
-
-            <android.support.v7.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp"
+                tools:listitem="@layout/row_data_company_notification"
+        />
 
     </LinearLayout>
+
 </LinearLayout>

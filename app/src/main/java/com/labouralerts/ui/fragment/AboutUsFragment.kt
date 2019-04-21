@@ -5,7 +5,7 @@ import com.labouralerts.R
 
 class AboutUsFragment:BaseFragments(){
     override fun defineLayoutResource(): Int {
-        return R.layout.fragment_advance_search
+        return R.layout.fragment_about_us
     }
 
     override fun initializeComponent(view: View) {

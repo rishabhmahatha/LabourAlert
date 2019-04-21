@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:background="@color/colorWhite"
+                 android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView android:layout_width="match_parent"
+                                                      android:layout_height="match_parent"
+                                                      android:src="@drawable/ic_main_background"
+                                                      android:tint="@color/colorPrimary"
+                                                      android:alpha="0.6"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:padding="@dimen/_10sdp"
+                                                         android:text="@string/back"
+                                                         android:visibility="gone"
+                                                         android:id="@+id/fragment_login_tvBack"
+                                                         android:textSize="@dimen/_15sdp"
+                                                         android:layout_gravity="start"
+                                                         android:textColor="@color/colorPrimary"
+                                                         android:fontFamily="@font/font_roboto_bold"
+            />
+
+            <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/_200sdp"
+                                                          android:layout_marginTop="@dimen/_20sdp"
+                                                          android:layout_height="@dimen/_150sdp"
+                                                          android:layout_gravity="center"
+                                                          android:src="@drawable/ic_main_logo_blue"/>
+
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:id="@+id/activity_splash_tvViewResult"
+                                                         android:lines="1"
+                                                         android:maxLines="1"
+                                                         android:background="@color/colorPrimary"
+                                                         android:text="@string/labour_alerts"
+                                                         android:gravity="center"
+                                                         android:layout_marginTop="@dimen/_50sdp"
+                                                         android:paddingLeft="@dimen/_10sdp"
+                                                         android:paddingRight="@dimen/_10sdp"
+                                                         android:paddingTop="@dimen/_10sdp"
+                                                         android:paddingBottom="@dimen/_10sdp"
+                                                         android:textSize="@dimen/_20sdp"
+                                                         android:fontFamily="@font/font_roboto_regular"
+                                                         android:textColor="@color/colorBlack"/>
+
+            <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:text="@string/label_company_city_state"
+                                                         android:layout_gravity="center"
+                                                         android:padding="@dimen/_5sdp"
+                                                         android:layout_marginTop="@dimen/_15sdp"
+                                                         android:textColor="@color/colorPrimary"
+                                                         android:fontFamily="@font/font_roboto_regular"
+                                                         android:textSize="@dimen/_15sdp"
+            />
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:id="@+id/fragment_search_option_llSearchBtnParent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatButton android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/fragment_search_option_btnSearch"
+                                                               android:background="@drawable/drawable_rounded_rectangle_bg"
+                                                               android:text="@string/label_search"
+                                                               android:textAllCaps="false"
+                                                               android:textColor="@color/colorWhite"
+                                                               android:textSize="@dimen/_18sdp"
+                                                               android:padding="@dimen/_10sdp"
+                                                               android:fontFamily="@font/font_roboto_regular"
+                                                               android:layout_marginTop="@dimen/_20sdp"
+                                                               android:layout_marginStart="@dimen/_20sdp"
+                                                               android:layout_marginEnd="@dimen/_20sdp"
+                    />
+
+
+                    <android.support.v7.widget.AppCompatButton android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/fragment_search_option_btnAdavanceSearch"
+                                                               android:background="@drawable/drawable_rounded_rectangle_bg"
+                                                               android:text="@string/label_advance_search"
+                                                               android:textAllCaps="false"
+                                                               android:fontFamily="@font/font_roboto_regular"
+                                                               android:textColor="@color/colorWhite"
+                                                               android:textSize="@dimen/_18sdp"
+                                                               android:padding="@dimen/_10sdp"
+                                                               android:layout_marginTop="@dimen/_20sdp"
+                                                               android:layout_marginStart="@dimen/_20sdp"
+                                                               android:layout_marginEnd="@dimen/_20sdp"
+                    />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/fragment_search_option_llSearchViewParent"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
+                                                                 android:layout_height="wrap_content"
+                                                                 android:padding="@dimen/_10sdp"
+                                                                 android:layout_marginTop="@dimen/_20sdp"
+                                                                 android:layout_marginStart="@dimen/_20sdp"
+                                                                 android:layout_marginEnd="@dimen/_20sdp"
+                                                                 android:inputType="textEmailAddress"
+                                                                 android:lines="1"
+                                                                 android:maxLines="1"
+                                                                 android:maxLength="30"
+                                                                 android:id="@+id/fragment_search_option_etSearch"
+                                                                 android:hint="@string/label_search"
+                                                                 android:textColor="@color/colorDarkGray"
+                                                                 android:gravity="center"
+                                                                 android:fontFamily="@font/font_roboto_regular"
+                                                                 android:background="@drawable/drawable_subscription_item_bg"/>
+
+
+                    <android.support.v7.widget.AppCompatButton android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:background="@drawable/drawable_rounded_rectangle_bg"
+                                                               android:text="@string/label_search"
+                                                               android:id="@+id/fragment_search_option_btnSearchResult"
+                                                               android:textAllCaps="false"
+                                                               android:textColor="@color/colorWhite"
+                                                               android:textSize="@dimen/_18sdp"
+                                                               android:padding="@dimen/_10sdp"
+                                                               android:layout_marginTop="@dimen/_20sdp"
+                                                               android:layout_marginStart="@dimen/_20sdp"
+                                                               android:layout_marginEnd="@dimen/_20sdp"
+                    />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ScrollView>

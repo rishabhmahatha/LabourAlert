@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:padding="@dimen/_5sdp"
+              android:layout_height="wrap_content">
 
-    <SeekBar xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="fill_parent"
-             android:layout_height="@dimen/_50sdp"
-             android:progressDrawable="@drawable/drawable_rounded_rectangle_bg"
-             android:thumb="@null"
-             />
+    <ProgressBar
+            android:id="@+id/row_data_graph_pbProgressBlue"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:maxHeight="@dimen/_30sdp"
+            android:minHeight="@dimen/_30sdp"
+            android:progress="90"
+            android:progressDrawable="@drawable/drawable_progress_bar"/>
+
+    <ProgressBar
+            android:id="@+id/row_data_graph_pbProgressGray"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:maxHeight="@dimen/_30sdp"
+            android:minHeight="@dimen/_30sdp"
+            android:progress="90"
+            android:progressDrawable="@drawable/drawable_progress_bar_gray"/>
+
+    <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/row_data_graph_tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="39 New Yoork Air Break LLC NYAB"
+            android:textSize="@dimen/_12sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textColor="@color/colorBlack"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="@dimen/_5sdp"
+          android:background="@color/colorPrimary"/>
+
 
 </LinearLayout>

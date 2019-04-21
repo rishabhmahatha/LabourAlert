@@ -15,20 +15,22 @@
         <android.support.v7.widget.AppCompatButton android:layout_width="0dp"
                                                    android:layout_weight="1"
                                                    android:text="@string/label_companies"
+                                                   android:id="@+id/fragment_top_10_btnCompanies"
                                                    android:textAllCaps="false"
                                                    android:layout_margin="@dimen/_3sdp"
                                                    android:background="@drawable/drawable_selector_bg"
-                                                   android:textSize="@dimen/_15sdp"
+                                                   android:textSize="@dimen/_14sdp"
                                                    android:layout_height="@dimen/_40sdp"/>
 
 
         <android.support.v7.widget.AppCompatButton android:layout_width="0dp"
                                                    android:layout_weight="1"
                                                    android:text="@string/label_states"
+                                                   android:id="@+id/fragment_top_10_btnStates"
                                                    android:layout_margin="@dimen/_3sdp"
                                                    android:background="@drawable/drawable_selector_bg"
                                                    android:textAllCaps="false"
-                                                   android:textSize="@dimen/_15sdp"
+                                                   android:textSize="@dimen/_14sdp"
                                                    android:layout_height="@dimen/_40sdp"/>
 
     </LinearLayout>
@@ -42,52 +44,74 @@
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="0dp"
+                android:id="@+id/fragment_top_10_tv1Y"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/label_1y"
+                android:textColor="@drawable/drawable_selector_text_color"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp"
         />
 
 
         <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/fragment_top_10_tv3M"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/label_3m"
+                android:textColor="@drawable/drawable_selector_text_color"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp"
         />
 
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="0dp"
+                android:id="@+id/fragment_top_10_tv2M"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/label_2m"
+                android:textColor="@drawable/drawable_selector_text_color"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp"
         />
 
 
         <android.support.v7.widget.AppCompatTextView
                 android:layout_width="0dp"
+                android:id="@+id/fragment_top_10_tv1M"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/label_1m"
+                android:textColor="@drawable/drawable_selector_text_color"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp"
         />
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginTop="@dimen/_10sdp"
-                                            tools:listitem="@layout/row_top_10"
-    />
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_top_10_rvTop10CompanyList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:listitem="@layout/row_top_10"
+        />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_top_10_rvTop10StateList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:listitem="@layout/row_top_10"
+        />
+    </FrameLayout>
 </LinearLayout>

@@ -7,6 +7,7 @@
 
     <android.support.v7.widget.AppCompatImageView android:layout_width="match_parent"
                                                   android:src="@drawable/ic_splash_bg"
+                                                  android:scaleType="fitXY"
                                                   android:layout_above="@+id/activity_splash_llParent"
                                                   android:layout_height="match_parent"/>
 
