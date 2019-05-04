@@ -3,6 +3,7 @@ package com.labouralerts.ui.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+import com.labouralerts.ui.model.DataModel._1
 
 
 class DataModel {
@@ -313,7 +314,6 @@ class DataModel {
     }
 
     class Notification {
-
         @SerializedName("city")
         @Expose
         var city: String? = null
@@ -360,6 +360,47 @@ class DataModel {
         var companyName: String? = null
 
     }
+
+    //Alert notification model
+    class AlertNotification {
+        @SerializedName("1")
+        @Expose
+        var alertNotification: ArrayList<AlertNotificationModel>? = null
+    }
+
+    class AlertNotificationModel {
+        @SerializedName("company_name")
+        @Expose
+        var companyName: String? = null
+        @SerializedName("state")
+        @Expose
+        var state: String? = null
+        @SerializedName("city1")
+        @Expose
+        var city1: String? = null
+        @SerializedName("upload_date")
+        @Expose
+        var uploadDate: String? = null
+        @SerializedName("employees_affected")
+        @Expose
+        var employeesAffected: String? = null
+    }
+
+    //advance search model
+     class AdvanceSearchMainModel:Serializable {
+
+        @SerializedName("data")
+        @Expose
+        var data: ArrayList<SearchCompanyCityState>? = null
+        @SerializedName("Success")
+        @Expose
+        var success: Int? = null
+        @SerializedName("message")
+        @Expose
+        var message: String? = null
+
+    }
+
 //    -----------------------------------------------------------------------------------------------
 
     //Notification List model

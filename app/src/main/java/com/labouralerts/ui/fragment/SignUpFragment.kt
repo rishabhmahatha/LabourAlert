@@ -8,7 +8,9 @@ import android.view.View
 import com.google.gson.Gson
 import com.labouralerts.R
 import com.labouralerts.ui.activity.HomeActivity
+import com.labouralerts.ui.activity.TcPrivacyAboutUsActivity
 import com.labouralerts.ui.model.DataModel
+import com.labouralerts.utils.Constants
 import com.labouralerts.utils.Preference
 import com.labouralerts.utils.Utils
 import com.labouralerts.webservice.WSConstants
@@ -27,8 +29,9 @@ class SignUpFragment : BaseFragments() {
     override fun initializeComponent(view: View) {
         fragment_signup_btnSignUp.setOnClickListener(this)
         fragment_signup_tvGoToSignIn.setOnClickListener(this)
-        fragment_signup_tvTermsConditions.text =
-            Html.fromHtml(getString(R.string.hint_by_tapping_sign_up_amp_accept_you_agree_to_the_terms_of_service_and_privacy_policy))
+        fragment_signup_tvPP.setOnClickListener(this)
+        fragment_signup_tvTC.setOnClickListener(this)
+
     }
 
     /**
@@ -40,13 +43,13 @@ class SignUpFragment : BaseFragments() {
 
         if (!Utils.isEmailValid(email)) {
             Utils.showSnackBar(
-                activity!!, fragment_signup_tvTermsConditions, true,
+                activity!!, fragment_signup_tvGoToSignIn, true,
                 "Please enter a valid email."
             )
             return false
         } else if (!confirmEmail.equals(email)) {
             Utils.showSnackBar(
-                activity!!, fragment_signup_tvTermsConditions, true,
+                activity!!, fragment_signup_tvGoToSignIn, true,
                 "Email and confirm email must be same."
             )
             return false
@@ -65,13 +68,25 @@ class SignUpFragment : BaseFragments() {
                 if (isValid()) {
                     checkUserNameExist(fragment_signup_etEmail.text.toString().trim())
                 }
-
-
             }
 
             R.id.fragment_signup_tvGoToSignIn -> {
                 activity!!.onBackPressed()
             }
+
+            R.id.fragment_signup_tvPP -> {
+                val intent = Intent(activity, TcPrivacyAboutUsActivity::class.java);
+                intent.putExtra(Constants.TITLE,"Privacy Policy")
+                startActivity(intent)
+            }
+
+            R.id.fragment_signup_tvTC -> {
+                val intent = Intent(activity, TcPrivacyAboutUsActivity::class.java);
+                intent.putExtra(Constants.TITLE,"Terms and Conditions")
+                startActivity(intent)
+            }
+
+
         }
     }
 
@@ -125,7 +140,7 @@ class SignUpFragment : BaseFragments() {
                         )
                     } else {
                         Utils.showSnackBar(
-                            activity!!, fragment_signup_tvTermsConditions, true,
+                            activity!!, fragment_signup_tvGoToSignIn, true,
                             checkUserNameResponseModel.message!!
                         )
                     }
@@ -133,7 +148,7 @@ class SignUpFragment : BaseFragments() {
                 } else {
                     Utils.showSnackBar(
                         activity!!,
-                        fragment_signup_tvTermsConditions,
+                        fragment_signup_tvGoToSignIn,
                         true,
                         getString(R.string.alert_some_error)
                     )
@@ -146,7 +161,7 @@ class SignUpFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_signup_tvGoToSignIn,
                     true,
                     getString(R.string.alert_some_error)
                 )
@@ -233,7 +248,7 @@ class SignUpFragment : BaseFragments() {
                         Log.d("@@@", "Success")
                     } else {
                         Utils.showSnackBar(
-                            activity!!, fragment_signup_tvTermsConditions, true,
+                            activity!!, fragment_signup_tvGoToSignIn, true,
                             checkUserNameResponseModel.message!!
                         )
                     }
@@ -241,7 +256,7 @@ class SignUpFragment : BaseFragments() {
                 } else {
                     Utils.showSnackBar(
                         activity!!,
-                        fragment_signup_tvTermsConditions,
+                        fragment_signup_tvGoToSignIn,
                         true,
                         getString(R.string.alert_some_error)
                     )
@@ -254,7 +269,7 @@ class SignUpFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_signup_tvGoToSignIn,
                     true,
                     getString(R.string.alert_some_error)
                 )

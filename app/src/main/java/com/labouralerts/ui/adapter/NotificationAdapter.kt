@@ -14,7 +14,7 @@ import com.labouralerts.ui.model.DataModel
 
 class NotificationAdapter(
     private val context: Context,
-    private val arrNotificationList: ArrayList<DataModel.NotificationModel>
+    private val arrNotificationList: ArrayList<DataModel.AlertNotificationModel>
 ) : RecyclerView.Adapter<NotificationAdapter.MyViewHolder>() {
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -32,11 +32,11 @@ class NotificationAdapter(
     }
 
     override fun onBindViewHolder(holder: NotificationAdapter.MyViewHolder, position: Int) {
-        holder.tvTitleFirst!!.text = arrNotificationList[position].firstTitle
-        holder.tvTitleSecond!!.text = arrNotificationList[position].secondTitle
-        holder.tvTitleSecondCount!!.text = arrNotificationList[position].secondTitleCount
-        holder.tvTitleThird!!.text = arrNotificationList[position].thirdTitle
-        holder.tvTitleFourth!!.text = arrNotificationList[position].fourthTitle
+        holder.tvTitleFirst!!.text = arrNotificationList[position].companyName
+        holder.tvTitleSecond!!.text = "Jobs Impacted: "
+        holder.tvTitleSecondCount!!.text = arrNotificationList[position].employeesAffected
+        holder.tvTitleThird!!.text = arrNotificationList[position].state
+        holder.tvTitleFourth!!.text = arrNotificationList[position].city1
     }
 
     override fun getItemCount(): Int {

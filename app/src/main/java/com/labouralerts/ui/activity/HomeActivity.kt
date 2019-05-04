@@ -14,13 +14,15 @@ import kotlinx.android.synthetic.main.layout_side_drawer.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
+import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import android.util.Log
+import com.labouralerts.utils.Constants
 
-
-class HomeActivity : BaseActivity() {
-
+class HomeActivity : BaseActivity(), RewardedVideoAdListener {
     var mDrawerToggle: ActionBarDrawerToggle? = null
-    var mRewardedVideoAd: RewardedVideoAd? = null
+    var mAd: RewardedVideoAd? = null
 
     override fun defineLayoutResource(): Int {
         return R.layout.activity_home
@@ -48,26 +50,15 @@ class HomeActivity : BaseActivity() {
         setOnClickListener()
     }
 
+
+    var adRequest: AdRequest? = null
     /*
     * This method is to initialize the ad mob*/
     private fun initAdMob() {
-        // initialize the AdMob app
-        MobileAds.initialize(this, getString(R.string.admob_app_id))
-
-        val adRequest = AdRequest.Builder()
-            .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-            // Check the LogCat to get your test device ID
-            .addTestDevice("3A95D6B3952C95EF94145A47C83B4A7F")
-            .build()
-
+        adRequest = AdRequest.Builder().addTestDevice("3A95D6B3952C95EF94145A47C83B4A7F").build()
         adView.loadAd(adRequest)
     }
 
-    /*This method is to initialize the reward video ad*/
-    private fun initVideoAd() {
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-
-    }
 
     /**
      * This method is to set the click listeners on all the view
@@ -90,7 +81,7 @@ class HomeActivity : BaseActivity() {
     /**
      * This method is to set the title in title bar
      */
-    public fun setTitleBarTitle(title: String) {
+    fun setTitleBarTitle(title: String) {
         tvToolBarTitle.text = title
     }
 
@@ -102,6 +93,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvSearch -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 //  setTitleBarTitle(getString(R.string.menu_search))
                 replaceFragment(R.id.flContainer, SearchOptionFragment(), false)
@@ -110,6 +102,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvAdvancedSearch -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.menu_advanced_search))
                 replaceFragment(R.id.flContainer, AdvanceSearchFragment(), false)
@@ -118,6 +111,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvTop10 -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.title_top_10))
                 replaceFragment(R.id.flContainer, Top10Fragment(), false)
@@ -126,6 +120,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvAlertNotification -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.menu_alert_notification))
                 replaceFragment(R.id.flContainer, NotificationFragment(), false)
@@ -134,6 +129,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvAlertManager -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.menu_alert_manager))
                 replaceFragment(R.id.flContainer, AlertManagerFragment(), false)
@@ -142,6 +138,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvAccount -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.menu_account))
                 replaceFragment(R.id.flContainer, AccountFragment(), false)
@@ -149,6 +146,7 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvUpgradeAccount -> {
                 closeDrawer()
+                loadRewardedVideo()
                 manageToolbarVisibility(false)
                 setTitleBarTitle(getString(R.string.menu_upgrade_account))
                 replaceFragment(R.id.flContainer, UpgradeAccountFragment(), false)
@@ -156,18 +154,19 @@ class HomeActivity : BaseActivity() {
 
             R.id.tvAboutUs -> {
                 closeDrawer()
-                manageToolbarVisibility(false)
-                setTitleBarTitle(getString(R.string.menu_about_us))
-                replaceFragment(R.id.flContainer, AboutUsFragment(), false)
-
+                loadRewardedVideo()
+                val intent = Intent(this, TcPrivacyAboutUsActivity::class.java);
+                intent.putExtra(Constants.TITLE,"About Us")
+                startActivity(intent)
             }
 
 
             R.id.tvTermsConditions -> {
                 closeDrawer()
-                manageToolbarVisibility(false)
-                setTitleBarTitle(getString(R.string.menu_terms_and_conditions))
-                replaceFragment(R.id.flContainer, WebViewFragment(), false)
+                loadRewardedVideo()
+                val intent = Intent(this, TcPrivacyAboutUsActivity::class.java);
+                intent.putExtra(Constants.TITLE,"Terms and Conditions")
+                startActivity(intent)
             }
 
 
@@ -274,4 +273,58 @@ class HomeActivity : BaseActivity() {
         alert.show()
     }
 
+
+    private fun loadRewardedVideo() {
+        mAd = MobileAds.getRewardedVideoAdInstance(this)
+        mAd!!.rewardedVideoAdListener = this
+        mAd!!.loadAd(
+            getString(com.labouralerts.R.string.interstitial_full_screen),
+            AdRequest.Builder().addTestDevice("3A95D6B3952C95EF94145A47C83B4A7F")
+                .build()
+        )
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoAdLoaded")
+        try {
+            if (mAd!!.isLoaded()) {
+                mAd!!.show()
+            }
+        } catch (e: NullPointerException) {
+            e.printStackTrace()
+        }
+
+    }
+
+    override fun onRewardedVideoAdOpened() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoAdOpened")
+    }
+
+    override fun onRewardedVideoStarted() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoStarted")
+    }
+
+    override fun onRewardedVideoAdClosed() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoAdClosed")
+    }
+
+    override fun onRewarded(rewardItem: RewardItem) {
+        Log.i(
+            "Video Ad", "Rewarded:  onRewarded! currency: " + rewardItem.type + "  amount: " +
+                    rewardItem.amount
+        )
+
+    }
+
+    override fun onRewardedVideoAdLeftApplication() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoAdLeftApplication ")
+    }
+
+    override fun onRewardedVideoAdFailedToLoad(i: Int) {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoAdFailedToLoad: $i")
+    }
+
+    override fun onRewardedVideoCompleted() {
+        Log.i("Video Ad", "Rewarded: onRewardedVideoCompleted")
+    }
 }

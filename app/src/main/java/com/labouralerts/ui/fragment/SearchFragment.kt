@@ -134,7 +134,7 @@ class SearchFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_search_btnSearch,
                     true,
                     getString(R.string.alert_some_error)
                 )

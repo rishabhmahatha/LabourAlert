@@ -28,6 +28,7 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
     var viewManager: LinearLayoutManager? = null
     var viewManagerGraph: LinearLayoutManager? = null
     var basicSearchMainModel: DataModel.BasicSearchMainModel? = null
+    var advanceSearchMainModel: DataModel.AdvanceSearchMainModel? = null
     var arrListBasicSearchMainModel: ArrayList<DataModel.SearchCompanyCityState> = ArrayList()
     var resultsAdapter: ResultsAdapter? = null
 
@@ -40,12 +41,21 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
             (activity as HomeActivity).manageToolbarVisibility(true)
         }
 
-        if (arguments != null && arguments!!.containsKey(Constants.BASIC_SEARCH_RESULT_MODEL)) {
-            basicSearchMainModel =
-                arguments!!.getSerializable(Constants.BASIC_SEARCH_RESULT_MODEL) as DataModel.BasicSearchMainModel?
-            arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.company!!)
-            arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.city!!)
-            arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.state!!)
+        if (arguments != null && arguments!!.containsKey(Constants.BASIC_SEARCH_RESULT_MODEL)
+            && arguments!!.containsKey(Constants.IS_BASIC_SEARCH_RESULT_MODEL)
+        ) {
+            if(arguments!!.getBoolean(Constants.IS_BASIC_SEARCH_RESULT_MODEL)){
+                basicSearchMainModel =
+                    arguments!!.getSerializable(Constants.BASIC_SEARCH_RESULT_MODEL) as DataModel.BasicSearchMainModel?
+                arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.company!!)
+                arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.city!!)
+                arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.state!!)
+            }else{
+                advanceSearchMainModel =
+                    arguments!!.getSerializable(Constants.BASIC_SEARCH_RESULT_MODEL) as DataModel.AdvanceSearchMainModel?
+                arrListBasicSearchMainModel.addAll(advanceSearchMainModel!!.data!!)
+            }
+
         }
 
         viewManager = LinearLayoutManager(activity)

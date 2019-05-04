@@ -154,7 +154,7 @@ class LoginFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_login_btnLogin,
                     true,
                     getString(R.string.alert_some_error)
                 )

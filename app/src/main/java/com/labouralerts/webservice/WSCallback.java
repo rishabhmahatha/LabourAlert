@@ -70,7 +70,7 @@ public interface WSCallback {
     @FormUrlEncoded
     Call<ResponseBody> advanceSearch(@Field(WSConstants.WS_PARAM_COMPANY_NAME) String companyName,
                                      @Field(WSConstants.WS_PARAM_CITY) String city,
-                                     @Field(WSConstants.WS_PARAM_COUNTY) String country,
+                                     @Field(WSConstants.WS_PARAM_COUNTRY) String country,
                                      @Field(WSConstants.WS_PARAM_STATE) String state,
                                      @Field(WSConstants.WS_PARAM_EFFECTIVE_DATE_START) String startDate,
                                      @Field(WSConstants.WS_PARAM_EFFECTIVE_DATE_END) String EndDAte,
@@ -80,6 +80,11 @@ public interface WSCallback {
     @POST(WSConstants.WS_METHOD_NOTIFICATION)
     @FormUrlEncoded
     Call<ResponseBody> notification(@Field(WSConstants.WS_PARAM_USER_ID) String userID
+    );
+
+    @POST(WSConstants.WS_METHOD_ALERT_NOTIFICATION)
+    @FormUrlEncoded
+    Call<ResponseBody> alertNotification(@Field(WSConstants.WS_PARAM_USER_ID) String userID
     );
 
 //    @GET(WSConstants.WS_METHOD_TOP_HEADLINES)

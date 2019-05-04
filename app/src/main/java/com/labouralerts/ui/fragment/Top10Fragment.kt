@@ -278,7 +278,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
 
                     } else {
                         Utils.showSnackBar(
-                            activity!!, fragment_signup_tvTermsConditions, true,
+                            activity!!, fragment_top_10_btnCompanies, true,
                             checkUserNameResponseModel.message!!
                         )
                     }
@@ -286,7 +286,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                 } else {
                     Utils.showSnackBar(
                         activity!!,
-                        fragment_signup_tvTermsConditions,
+                        fragment_top_10_btnCompanies,
                         true,
                         getString(R.string.alert_some_error)
                     )
@@ -299,7 +299,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_top_10_btnCompanies,
                     true,
                     getString(R.string.alert_some_error)
                 )
@@ -360,7 +360,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_top_10_btnCompanies,
                     true,
                     getString(R.string.alert_some_error)
                 )
@@ -394,13 +394,13 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                     if (checkUserNameResponseModel.Success != null && checkUserNameResponseModel.Success == 1) {
                         Log.d("@@@", "Success")
                         Utils.showSnackBar(
-                            activity!!, fragment_signup_tvTermsConditions, false,
+                            activity!!, fragment_top_10_btnCompanies, false,
                             checkUserNameResponseModel.message!!
                         )
 
                     } else {
                         Utils.showSnackBar(
-                            activity!!, fragment_signup_tvTermsConditions, true,
+                            activity!!, fragment_top_10_btnCompanies, true,
                             checkUserNameResponseModel.message!!
                         )
                     }
@@ -408,7 +408,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                 } else {
                     Utils.showSnackBar(
                         activity!!,
-                        fragment_signup_tvTermsConditions,
+                        fragment_top_10_btnCompanies,
                         true,
                         getString(R.string.alert_some_error)
                     )
@@ -421,7 +421,7 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_top_10_btnCompanies,
                     true,
                     getString(R.string.alert_some_error)
                 )

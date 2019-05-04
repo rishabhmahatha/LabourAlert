@@ -1,12 +1,16 @@
 package com.labouralerts.ui.fragment
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import com.google.gson.Gson
 import com.labouralerts.R
+import com.labouralerts.ui.activity.OptionActivity
+import com.labouralerts.ui.activity.TcPrivacyAboutUsActivity
 import com.labouralerts.ui.model.DataModel
+import com.labouralerts.utils.Constants
 import com.labouralerts.utils.Preference
 import com.labouralerts.utils.Utils
 import com.labouralerts.webservice.WSUtils
@@ -46,6 +50,12 @@ class AccountFragment : BaseFragments() {
                     }
 
                 }
+            }
+
+            R.id.fragment_account_tvAboutUs->{
+                val intent = Intent(activity, TcPrivacyAboutUsActivity::class.java);
+                intent.putExtra(Constants.TITLE,"About Us")
+                startActivity(intent)
             }
         }
     }
@@ -140,7 +150,7 @@ class AccountFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_account_btnChangePassword,
                     true,
                     getString(R.string.alert_some_error)
                 )

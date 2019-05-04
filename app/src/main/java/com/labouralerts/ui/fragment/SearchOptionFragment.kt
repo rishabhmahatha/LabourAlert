@@ -81,6 +81,7 @@ class SearchOptionFragment : BaseFragments() {
         val fragment = SearchResultFragment()
         val bundle = Bundle()
         bundle.putSerializable(Constants.BASIC_SEARCH_RESULT_MODEL, basicSearchMainModel)
+        bundle.putBoolean(Constants.IS_BASIC_SEARCH_RESULT_MODEL, true)
         fragment.arguments = bundle
         replaceFragment(R.id.flContainer, fragment, false)
 
@@ -157,7 +158,7 @@ class SearchOptionFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_search_btnSearch,
                     true,
                     getString(R.string.alert_some_error)
                 )

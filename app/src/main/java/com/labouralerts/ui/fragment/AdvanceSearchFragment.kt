@@ -1,6 +1,7 @@
 package com.labouralerts.ui.fragment
 
 import android.app.ProgressDialog
+import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
@@ -10,6 +11,8 @@ import android.widget.Toast
 import com.google.gson.Gson
 import com.labouralerts.R
 import com.labouralerts.ui.model.DataModel
+import com.labouralerts.utils.Constants
+import com.labouralerts.utils.Preference
 import com.labouralerts.utils.Utils
 import com.labouralerts.webservice.WSUtils
 import kotlinx.android.synthetic.main.fragment_account.*
@@ -26,13 +29,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
+
 class AdvanceSearchFragment : BaseFragments() {
     var selectedStatePosition = 0
     var selectedStartYearPosition = 0
     var selectedEndYearPosition = 0
     var selectedStartMonthPosition = 0
     var selectedEndMonthPosition = 0
-
 
     var city: Array<String>? = null
     var year: Array<String>? = null
@@ -172,11 +175,7 @@ class AdvanceSearchFragment : BaseFragments() {
 
             fragment_advance_search_spCity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    Toast.makeText(
-                        activity,
-                        city!![position],
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    selectedStatePosition = position
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -205,15 +204,8 @@ class AdvanceSearchFragment : BaseFragments() {
 
             fragment_advance_search_spYearEnd.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    if (selectedStartYearPosition > selectedEndYearPosition) {
-                        Utils.showSnackBar(
-                            activity!!, fragment_advance_search_etCountry, true,
-                            "End month must be greater than the start month."
-                        )
-                        selectedEndYearPosition = 0
-                    } else {
-                        selectedEndYearPosition = position
-                    }
+
+                    selectedEndYearPosition = position
 
                 }
 
@@ -243,15 +235,8 @@ class AdvanceSearchFragment : BaseFragments() {
 
             fragment_advance_search_spMonthEnd.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    if (selectedStartMonthPosition > selectedEndMonthPosition) {
-                        Utils.showSnackBar(
-                            activity!!, fragment_advance_search_etCountry, true,
-                            "End month must be greater than the start month."
-                        )
-                        selectedEndMonthPosition = 0
-                    } else {
-                        selectedEndMonthPosition = position
-                    }
+
+                    selectedEndMonthPosition = position
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -267,9 +252,42 @@ class AdvanceSearchFragment : BaseFragments() {
         val id = view.id
 
         when (id) {
-            fragment_advance_search_btnSearch.id -> {
-                if (isValid()) {
 
+            fragment_advance_search_btnSearch.id -> {
+                var userId = "1"
+                if (Preference.instance.isLogin) {
+                    userId = Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                }
+
+                Log.d("@@@@","1-" +
+                        selectedStartMonthPosition
+                        + "-" +
+                        year!![selectedStartYearPosition])
+                getTimeStampNew("1-" +
+                        selectedStartMonthPosition
+                        + "-" +
+                        year!![selectedStartYearPosition])
+                if (isValid()) {
+                    callAdvanceSearchApi(
+                        fragment_advance_search_etCompany.text!!.trim().toString(),
+                        fragment_advance_search_etCity.text!!.trim().toString(),
+                        fragment_advance_search_etCountry.text!!.trim().toString(),
+                        city!![selectedStatePosition],
+                        getTimeStampNew(
+                            "1-" +
+                                    selectedStartMonthPosition
+                                    + "-" +
+                                    year!![selectedStartYearPosition]
+                        ),
+                        getTimeStampNew(
+                            "30-" +
+                                    selectedEndMonthPosition
+                                    + "-" +
+                                    year!![selectedEndYearPosition]
+
+                        ),
+                        userId
+                    )
                 }
             }
         }
@@ -342,73 +360,104 @@ class AdvanceSearchFragment : BaseFragments() {
     /**
      * This method is to call the advance search api
      */
-//    private fun callAdvanceSearchApi() {
-//        val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
-//
-//        if (!activity!!.isFinishing) {
-//            progressDialog.setCancelable(false)
-//            progressDialog.show()
-//            progressDialog.setContentView(R.layout.layout_progress_indicator)
-//        }
-//
-//        WSUtils.getClient().basicSearch(searchField, userId).enqueue(object :
-//            Callback<ResponseBody> {
-//
-//            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-//
-//                progressDialog.dismiss()
-//
-//                val jsonObject = WSUtils.getResponseJSON(response)
-//
-//                if (jsonObject != null) {
-//                    val checkUserNameResponseModel = Gson().fromJson<DataModel.BasicSearchMainModel>(
-//                        jsonObject.toString(),
-//                        DataModel.BasicSearchMainModel::class.java!!
-//                    )
-//                    if (checkUserNameResponseModel.success != null && checkUserNameResponseModel.success == 1) {
-//                        Log.d("@@@", "Success")
-//                        goToSearchResultScreen(checkUserNameResponseModel)
-//                    } else {
-//                        Utils.showSnackBar(
-//                            activity!!, fragment_search_btnSearch, true,
-//                            checkUserNameResponseModel.message!!
-//                        )
-//                    }
-//
-//                } else {
-//                    Utils.showSnackBar(
-//                        activity!!,
-//                        fragment_search_btnSearch,
-//                        true,
-//                        getString(R.string.alert_some_error)
-//                    )
-//                }
-//
-//            }
-//
-//            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-//
-//                progressDialog.dismiss()
-//                Utils.showSnackBar(
-//                    activity!!,
-//                    fragment_signup_tvTermsConditions,
-//                    true,
-//                    getString(R.string.alert_some_error)
-//                )
-//            }
-//        })
-//    }
+    private fun callAdvanceSearchApi(
+        companyName: String,
+        city: String,
+        country: String,
+        state: String,
+        startDate: String,
+        endDate: String,
+        userId: String
+    ) {
+        val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
+
+        if (!activity!!.isFinishing) {
+            progressDialog.setCancelable(false)
+            progressDialog.show()
+            progressDialog.setContentView(R.layout.layout_progress_indicator)
+        }
+
+        WSUtils.getClient().advanceSearch(companyName, city, country, state, startDate, endDate, userId)
+            .enqueue(object :
+                Callback<ResponseBody> {
+
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+
+                    progressDialog.dismiss()
+
+                    val jsonObject = WSUtils.getResponseJSON(response)
+
+                    if (jsonObject != null) {
+                        val checkUserNameResponseModel = Gson().fromJson<DataModel.AdvanceSearchMainModel>(
+                            jsonObject.toString(),
+                            DataModel.AdvanceSearchMainModel::class.java!!
+                        )
+                        if (checkUserNameResponseModel.success != null && checkUserNameResponseModel.success == 1) {
+                            Log.d("@@@", "Success")
+                            goToSearchResultScreen(checkUserNameResponseModel)
+
+                        } else {
+                            Utils.showSnackBar(
+                                activity!!, fragment_advance_search_etCountry, true,
+                                checkUserNameResponseModel.message!!
+                            )
+                        }
+
+                    } else {
+                        Utils.showSnackBar(
+                            activity!!,
+                            fragment_advance_search_etCountry,
+                            true,
+                            getString(R.string.alert_some_error)
+                        )
+                    }
+
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                    progressDialog.dismiss()
+                    Utils.showSnackBar(
+                        activity!!,
+                        fragment_advance_search_spCity,
+                        true,
+                        getString(R.string.alert_some_error)
+                    )
+                }
+            })
+    }
 
     /**
      * This method will return the timestamp
      */
     private fun getTimeStamp(selectedDate: String): String {
         val formatter: DateFormat
-        val date: Date
-        formatter = SimpleDateFormat("MMM,yyyy", Locale.US)
-        date = formatter.parse(selectedDate) as Date
+        formatter = SimpleDateFormat("dd/mm/yyyy", Locale.US)
+        val date = formatter.parse(selectedDate) as Date
         val timeStampDate = Timestamp(date.time)
-        return timeStampDate.toString()
+        return date.time.toString()
     }
+
+    private fun getTimeStampNew(selectedDate: String): String {
+        val str_date = "13-09-2011"
+        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
+        val date = formatter.parse(selectedDate) as Date
+        System.out.println("Today is " + date.time)
+        return date.time.toString()
+    }
+
+    /**
+     * This method is to redirect user to search result screen
+     */
+    private fun goToSearchResultScreen(basicSearchMainModel: DataModel.AdvanceSearchMainModel) {
+        val fragment = SearchResultFragment()
+        val bundle = Bundle()
+        bundle.putBoolean(Constants.IS_BASIC_SEARCH_RESULT_MODEL, false)
+        bundle.putSerializable(Constants.BASIC_SEARCH_RESULT_MODEL, basicSearchMainModel)
+        fragment.arguments = bundle
+        replaceFragment(R.id.flContainer, fragment, false)
+
+    }
+
 
 }

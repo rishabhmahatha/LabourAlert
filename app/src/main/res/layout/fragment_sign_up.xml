@@ -70,20 +70,69 @@
                                                          android:fontFamily="@font/font_roboto_regular"
                                                          android:background="@drawable/drawable_rectangle_edit_text_bg"/>
 
-            <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
-                                                         android:layout_height="wrap_content"
-                                                         android:text="@string/hint_by_tapping_sign_up_amp_accept_you_agree_to_the_terms_of_service_and_privacy_policy"
-                                                         android:layout_gravity="center"
-                                                         android:padding="@dimen/_5sdp"
-                                                         android:id="@+id/fragment_signup_tvTermsConditions"
-                                                         android:layout_marginTop="@dimen/_25sdp"
-                                                         android:textColor="@color/colorDarkGray"
-                                                         android:gravity="center"
-                                                         android:layout_marginStart="@dimen/_10sdp"
-                                                         android:layout_marginEnd="@dimen/_10sdp"
-                                                         android:fontFamily="@font/font_roboto_regular"
-                                                         android:textSize="@dimen/_12sdp"
-            />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:text="By tapping Sign Up &amp; Accept, you agree to the "
+                                                             android:layout_gravity="center"
+                                                             android:padding="@dimen/_5sdp"
+                                                             android:layout_marginTop="@dimen/_25sdp"
+                                                             android:textColor="@color/colorDarkGray"
+                                                             android:gravity="center"
+                                                             android:layout_marginStart="@dimen/_10sdp"
+                                                             android:layout_marginEnd="@dimen/_10sdp"
+                                                             android:fontFamily="@font/font_roboto_regular"
+                                                             android:textSize="@dimen/_12sdp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/fragment_signup_tvTC"
+                            android:layout_height="wrap_content"
+                            android:text="Terms of Service"
+                            android:layout_gravity="end"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="end"
+                            android:fontFamily="@font/font_roboto_regular"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.2"
+                            android:layout_height="wrap_content"
+                            android:text="and"
+                            android:layout_gravity="center"
+                            android:textColor="@color/colorDarkGray"
+                            android:gravity="center"
+                            android:fontFamily="@font/font_roboto_regular"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/fragment_signup_tvPP"
+                            android:layout_height="wrap_content"
+                            android:text="Privacy Policy"
+                            android:layout_gravity="start"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="start"
+                            android:fontFamily="@font/font_roboto_regular"
+                            android:textSize="@dimen/_12sdp"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
 
             <android.support.v7.widget.AppCompatButton android:layout_width="match_parent"
                                                        android:layout_height="wrap_content"

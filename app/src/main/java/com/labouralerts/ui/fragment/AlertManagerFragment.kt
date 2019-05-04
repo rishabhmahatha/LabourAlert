@@ -127,7 +127,7 @@ class AlertManagerFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_signup_tvTermsConditions,
+                    fragment_alerts_manager_llStates,
                     true,
                     getString(R.string.alert_some_error)
                 )

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/activity_tc_about_pp_ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:tint="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/activity_tc_about_pp_tvToolBarTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                tools:text="About Us"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/font_roboto_medium"
+                android:textSize="@dimen/_18sdp"/>
+
+        <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:visibility="invisible"
+                app:tint="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"/>
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+    >
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/activity_tc_about_pp_tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10sdp"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="@string/unlimited_mobile_and_website_advanced_access"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/font_roboto_regular"
+                android:textSize="@dimen/_13sdp"/>
+    </ScrollView>
+</LinearLayout>

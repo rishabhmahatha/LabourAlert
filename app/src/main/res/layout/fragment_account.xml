@@ -38,6 +38,7 @@
 
         <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
                                                      android:layout_height="wrap_content"
+                                                     android:id="@+id/fragment_account_tvAboutUs"
                                                      android:background="@drawable/drawable_subscription_item_bg"
                                                      android:layout_marginTop="@dimen/_10sdp"
                                                      android:padding="@dimen/_10sdp"
@@ -50,7 +51,6 @@
 
         <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
                                                      android:layout_height="wrap_content"
-                                                     android:id="@+id/activity_splash_tvViewResult"
                                                      android:lines="1"
                                                      android:maxLines="1"
                                                      android:text="@string/label_update_password"
