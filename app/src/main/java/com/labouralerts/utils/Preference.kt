@@ -17,6 +17,11 @@ class Preference private constructor() {
     val PREF_RENEW_DATE = "RENEW_DATE"
     val PREF_ACCOUNT_TYPE = "ACCOUNT_TYPE"
 
+    // 0- Free Trail
+    // 1- 6 months
+    // 2- 12 months
+    val PREF_SUBSCRIPTION_TYPE = "0"
+
 
 
     private val sharedPreferences: SharedPreferences =

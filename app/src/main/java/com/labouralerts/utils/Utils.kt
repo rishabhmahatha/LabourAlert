@@ -1,6 +1,7 @@
 package com.labouralerts.utils
 
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,6 +15,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import com.labouralerts.R
+import com.labouralerts.ui.activity.BaseActivity
 
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -52,28 +54,57 @@ object Utils {
     }
 
 
-    fun showSnackBar(context: Context, view: View?, isError: Boolean, message: String): Snackbar? {
+//    fun showSnackBar(context: Context, view: View?, isError: Boolean, message: String): Snackbar? {
+//
+//        if (view == null) {
+//            return null
+//        }
+//
+//        val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+//        val snackBarView = snackbar.view
+//        val textView = snackBarView.findViewById<TextView>(android.support.design.R.id.snackbar_text)
+//        if (isError) {
+//            snackBarView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
+//            textView.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light))
+//            textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(context, R.drawable.ic_launcher_foreground), null, null, null)
+//        } else {
+//            snackBarView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
+//            textView.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
+//            textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(context, R.drawable.ic_launcher_foreground), null, null, null)
+//        }
+//        textView.compoundDrawablePadding = context.resources.getDimensionPixelOffset(R.dimen._10sdp)
+//        textView.maxLines = 5
+//        snackbar.show()
+//        return snackbar
+//    }
 
-        if (view == null) {
-            return null
+    fun showSnackBar(mContext: Context, view: View?, isError: Boolean, message: String) {
+        mContext.let {
+            val snackBar = Snackbar.make(view!!, message, Snackbar.LENGTH_LONG)
+            val view1 = snackBar.view
+            val textView = view1.findViewById(android.support.design.R.id.snackbar_text) as TextView
+            when (mContext) {
+                is BaseActivity -> {
+                    if (isError) {
+                        view1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorSnackbarErrorBg))
+                        textView.setTextColor(ContextCompat.getColor(mContext, R.color.colorSnackbarErrorText))
+                    } else {
+                        view1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorSnackbarSuccessBg))
+                        textView.setTextColor(ContextCompat.getColor(mContext, R.color.colorSnackbarSuccessText))
+                    }
+                }
+                else -> {
+                    if (isError) {
+                        view1.setBackgroundColor(ContextCompat.getColor(it, R.color.colorSnackbarErrorBg))
+                        textView.setTextColor(ContextCompat.getColor(it, R.color.colorSnackbarErrorText))
+                    } else {
+                        view1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorSnackbarSuccessBg))
+                        textView.setTextColor(ContextCompat.getColor(mContext, R.color.colorSnackbarSuccessText))
+                    }
+                }
+            }
+            snackBar.show()
         }
-
-        val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG)
-        val snackBarView = snackbar.view
-        val textView = snackBarView.findViewById<TextView>(android.support.design.R.id.snackbar_text)
-        if (isError) {
-            snackBarView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
-            textView.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light))
-            textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(context, R.drawable.ic_launcher_foreground), null, null, null)
-        } else {
-            snackBarView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
-            textView.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
-            textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(context, R.drawable.ic_launcher_foreground), null, null, null)
-        }
-        textView.compoundDrawablePadding = context.resources.getDimensionPixelOffset(R.dimen._10sdp)
-        textView.maxLines = 5
-        snackbar.show()
-        return snackbar
     }
 
     fun convertImageUrlToFile(imageUrl: String, path: String, imageName: String): File {

@@ -10,7 +10,7 @@ public class WSConstants {
     /**
      * Webservice url
      */
-    static final String WS_BASE_API_URL = " http://www.laboralerts.com/laboralertapp/";
+    static final String WS_BASE_API_URL = "http://www.laboralerts.com/laboralertapp/";
 
     static final String WS_METHOD_CHECK_USER_NAME = "checkUsername.php";
     static final String WS_METHOD_SIGN_UP = "signUp.php";

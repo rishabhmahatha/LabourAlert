@@ -6,31 +6,58 @@ import android.util.Log
 import android.view.View
 import com.android.billingclient.api.*
 import com.labouralerts.R
+import com.labouralerts.utils.Constants
+import com.labouralerts.utils.Preference
+import kotlinx.android.synthetic.main.fragment_subscription.*
 
-class UpgradeAccountFragment:BaseFragments(),PurchasesUpdatedListener{
+class UpgradeAccountFragment : BaseFragments(), PurchasesUpdatedListener {
     private lateinit var billingClient: BillingClient
-
+    private lateinit var subscriptionType: String
 
     override fun defineLayoutResource(): Int {
         return R.layout.fragment_subscription
     }
 
     override fun initializeComponent(view: View) {
-//        getConnectionStatus(activity!!, this)
+
+    }
+
+    override fun onClick(view: View) {
+        super.onClick(view)
+
+        when (view.id) {
+            fragment_subscription_tvFreeTrial.id -> {
+
+            }
+
+            fragment_subscription_tv6Months.id -> {
+                subscriptionType = Constants._6_MONTH_SUBSCRIPTION_KEY
+                getConnectionStatus(activity!!, this, Constants._6_MONTH_SUBSCRIPTION_KEY)
+            }
+
+            fragment_subscription_tvOneYear.id -> {
+                subscriptionType = Constants._12_MONTH_SUBSCRIPTION_KEY
+                getConnectionStatus(activity!!, this, Constants._12_MONTH_SUBSCRIPTION_KEY)
+            }
+        }
     }
 
 
     /**
      * This method is to launch the subscription dialog
      */
-    private fun getConnectionStatus(context: Context, purchasesUpdatedListener: PurchasesUpdatedListener) {
+    private fun getConnectionStatus(
+        context: Context,
+        purchasesUpdatedListener: PurchasesUpdatedListener,
+        subscriptionId: String
+    ) {
         billingClient = BillingClient.newBuilder(context).setListener(purchasesUpdatedListener).build()
         billingClient.startConnection(
             object : BillingClientStateListener {
                 override fun onBillingSetupFinished(@BillingClient.BillingResponse billingResponseCode: Int) {
                     if (billingResponseCode == BillingClient.BillingResponse.OK) {
                         // The billing client is ready. You can query purchases here.
-                        openSubscriptionDialog(activity!!)
+                        openSubscriptionDialog(activity!!, subscriptionId)
                     }
                 }
 
@@ -42,10 +69,9 @@ class UpgradeAccountFragment:BaseFragments(),PurchasesUpdatedListener{
     }
 
 
-    private fun openSubscriptionDialog(activity: Activity) {
+    private fun openSubscriptionDialog(activity: Activity, subscriptionId: String) {
         val flowParams = BillingFlowParams.newBuilder()
-//            .setSku(Constants.SUBS_MONTHLY_SUBSCRIPTION)
-            .setSku("SUBSCRIPTION_ID")
+            .setSku(subscriptionId)
             .setType(BillingClient.SkuType.SUBS) // SkuType.SUB for subscription
             .build()
         val responseCode = billingClient.launchBillingFlow(activity, flowParams)
@@ -54,10 +80,14 @@ class UpgradeAccountFragment:BaseFragments(),PurchasesUpdatedListener{
     override fun onPurchasesUpdated(responseCode: Int, purchases: MutableList<Purchase>?) {
         if (responseCode == BillingClient.BillingResponse.OK && purchases != null) {
             for (purchase in purchases) {
-//                callAddSubscriptionApi(purchase.orderId, purchase.isAutoRenewing.toString(), WsConstants.DEVICE_OS_ANDROID, MyTrax.getInstance()!!.packageName,
-//                    Constants.SUBS_MONTHLY_SUBSCRIPTION, purchase.purchaseTime.toString(), purchase.purchaseToken, purchase.signature
-//                )
 
+                if (subscriptionType.equals(Constants._6_MONTH_SUBSCRIPTION_KEY)) {
+                    Preference.instance.setIntData(Preference.instance.PREF_SUBSCRIPTION_TYPE, 1)
+                } else if (subscriptionType.equals(Constants._12_MONTH_SUBSCRIPTION_KEY)) {
+                    Preference.instance.setIntData(Preference.instance.PREF_SUBSCRIPTION_TYPE, 2)
+                } else {
+                    Preference.instance.setIntData(Preference.instance.PREF_SUBSCRIPTION_TYPE, 0)
+                }
             }
         } else if (responseCode == BillingClient.BillingResponse.USER_CANCELED) {
             // Handle an error caused by a user cancelling the purchase flow.

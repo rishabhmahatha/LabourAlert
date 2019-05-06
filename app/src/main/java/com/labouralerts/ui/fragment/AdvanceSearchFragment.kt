@@ -29,7 +29,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-
 class AdvanceSearchFragment : BaseFragments() {
     var selectedStatePosition = 0
     var selectedStartYearPosition = 0
@@ -259,33 +258,65 @@ class AdvanceSearchFragment : BaseFragments() {
                     userId = Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
                 }
 
-                Log.d("@@@@","1-" +
-                        selectedStartMonthPosition
-                        + "-" +
-                        year!![selectedStartYearPosition])
-                getTimeStampNew("1-" +
-                        selectedStartMonthPosition
-                        + "-" +
-                        year!![selectedStartYearPosition])
                 if (isValid()) {
+                    var state1 = ""
+                    var startDate = ""
+                    var endDate = ""
+                    var city1 = ""
+                    var country1 = ""
+
+                    if (TextUtils.isEmpty(fragment_advance_search_etCity.text.toString().trim())) {
+                        city1 = ""
+                    } else {
+                        city1 = fragment_advance_search_etCity.text!!.trim().toString()
+                    }
+
+
+                    if (TextUtils.isEmpty(fragment_advance_search_etCountry.text.toString().trim())) {
+                        country1 = ""
+                    } else {
+                        country1 = fragment_advance_search_etCountry.text!!.trim().toString()
+                    }
+
+                    if (selectedStatePosition != 0) {
+                        state1 = city!![selectedStatePosition].toString()
+                    }
+                    if (selectedStartYearPosition == 0 || selectedStartMonthPosition == 0 ||
+                        selectedEndMonthPosition == 0 || selectedEndYearPosition == 0
+                    ) {
+                        startDate = ""
+                        endDate = ""
+                    } else {
+                        if (selectedStartMonthPosition != 0 && selectedStartYearPosition != 0) {
+                            startDate = getTimeStampNew("1" + "-" +
+                                    selectedStartMonthPosition + "-" +
+                                    year!![selectedStartYearPosition])
+                        } else {
+                            startDate = ""
+
+                        }
+
+                        if (selectedEndYearPosition != 0 && selectedEndMonthPosition != 0) {
+                            endDate = getTimeStampNew("30" + "-" +
+                                    selectedEndMonthPosition + "-" +
+                                    year!![selectedEndYearPosition])
+                        } else {
+                            endDate = ""
+
+                        }
+                    }
                     callAdvanceSearchApi(
                         fragment_advance_search_etCompany.text!!.trim().toString(),
-                        fragment_advance_search_etCity.text!!.trim().toString(),
-                        fragment_advance_search_etCountry.text!!.trim().toString(),
-                        city!![selectedStatePosition],
-                        getTimeStampNew(
-                            "1-" +
-                                    selectedStartMonthPosition
-                                    + "-" +
-                                    year!![selectedStartYearPosition]
-                        ),
-                        getTimeStampNew(
-                            "30-" +
-                                    selectedEndMonthPosition
-                                    + "-" +
-                                    year!![selectedEndYearPosition]
+                        city1,
+                        country1,
+                        state1,
 
-                        ),
+                            startDate
+                        ,
+
+
+                            endDate
+                        ,
                         userId
                     )
                 }
@@ -302,57 +333,8 @@ class AdvanceSearchFragment : BaseFragments() {
                 activity!!, fragment_advance_search_etCountry, true,
                 "Please enter company name."
             )
-
             return false
-        } else if (selectedStatePosition == 0) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please select state."
-            )
-
-            return false
-        } else if (selectedStartYearPosition == 0) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please select start year."
-            )
-
-            return false
-        } else if (selectedEndYearPosition == 0) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please select end year."
-            )
-
-            return false
-        } else if (selectedStartMonthPosition == 0) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please select start month."
-            )
-
-            return false
-        } else if (selectedEndMonthPosition == 0) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please select end month."
-            )
-            return false
-        } else if (TextUtils.isEmpty(fragment_advance_search_etCity.text!!.trim().toString())) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please enter city"
-            )
-
-            return false
-        } else if (TextUtils.isEmpty(fragment_advance_search_etCountry.text!!.trim().toString())) {
-            Utils.showSnackBar(
-                activity!!, fragment_advance_search_etCountry, true,
-                "Please enter country."
-            )
-
-            return false
-        } else {
+        }  else {
             return true
         }
     }
@@ -438,12 +420,25 @@ class AdvanceSearchFragment : BaseFragments() {
         return date.time.toString()
     }
 
+//    private fun getTimeStampNew(selectedDate: String): String {
+//        val formatter = SimpleDateFormat("dd MMM yyyy", Locale.US)
+//        val date = formatter.parse(selectedDate) as Date
+//        System.out.println("Today is " + date.time)
+//        return date.time.toString()
+//    }
+
     private fun getTimeStampNew(selectedDate: String): String {
-        val str_date = "13-09-2011"
+//        val str_date = "13-09-2011"
+//        val tempDate = selectedDate
         val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
+        formatter.timeZone = TimeZone.getTimeZone("GMT");
+
         val date = formatter.parse(selectedDate) as Date
-        System.out.println("Today is " + date.time)
-        return date.time.toString()
+        var temp = date.time.toString()
+        temp = temp.substring(0, temp.length - 3)
+        System.out.println("Today is " + temp)
+        return temp
+
     }
 
     /**
