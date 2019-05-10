@@ -14,6 +14,7 @@
             android:indeterminate="false"
             android:maxHeight="@dimen/_30sdp"
             android:minHeight="@dimen/_30sdp"
+            android:max="2000"
             android:progress="90"
             android:progressDrawable="@drawable/drawable_progress_bar"/>
 
@@ -22,10 +23,11 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:max="2000"
             android:indeterminate="false"
             android:maxHeight="@dimen/_30sdp"
             android:minHeight="@dimen/_30sdp"
-            android:progress="90"
+            android:progress="900"
             android:progressDrawable="@drawable/drawable_progress_bar_gray"/>
 
     <android.support.v7.widget.AppCompatTextView

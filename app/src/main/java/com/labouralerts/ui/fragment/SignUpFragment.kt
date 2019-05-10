@@ -5,6 +5,7 @@ import android.content.Intent
 import android.text.Html
 import android.util.Log
 import android.view.View
+import com.google.firebase.iid.FirebaseInstanceId
 import com.google.gson.Gson
 import com.labouralerts.R
 import com.labouralerts.ui.activity.HomeActivity
@@ -135,7 +136,7 @@ class SignUpFragment : BaseFragments() {
                             "2968 Pheasant Dr",
                             "Casper",
                             ((System.currentTimeMillis() / 1000) + 604800000L).toString(),
-                            "82604", "USA", "Approved", "1564464646446", "132155464",
+                            "82604", "USA", "Approved", FirebaseInstanceId.getInstance().token!!, "132155464",
                             (((System.currentTimeMillis() / 1000) + 604800000L) * 30).toString(), "123456"
                         )
                     } else {

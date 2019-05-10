@@ -288,18 +288,22 @@ class AdvanceSearchFragment : BaseFragments() {
                         endDate = ""
                     } else {
                         if (selectedStartMonthPosition != 0 && selectedStartYearPosition != 0) {
-                            startDate = getTimeStampNew("1" + "-" +
-                                    selectedStartMonthPosition + "-" +
-                                    year!![selectedStartYearPosition])
+                            startDate = getTimeStampNew(
+                                "1" + "-" +
+                                        selectedStartMonthPosition + "-" +
+                                        year!![selectedStartYearPosition]
+                            )
                         } else {
                             startDate = ""
 
                         }
 
                         if (selectedEndYearPosition != 0 && selectedEndMonthPosition != 0) {
-                            endDate = getTimeStampNew("30" + "-" +
-                                    selectedEndMonthPosition + "-" +
-                                    year!![selectedEndYearPosition])
+                            endDate = getTimeStampNew(
+                                "30" + "-" +
+                                        selectedEndMonthPosition + "-" +
+                                        year!![selectedEndYearPosition]
+                            )
                         } else {
                             endDate = ""
 
@@ -310,13 +314,8 @@ class AdvanceSearchFragment : BaseFragments() {
                         city1,
                         country1,
                         state1,
-
-                            startDate
-                        ,
-
-
-                            endDate
-                        ,
+                        startDate,
+                        endDate,
                         userId
                     )
                 }
@@ -334,7 +333,7 @@ class AdvanceSearchFragment : BaseFragments() {
                 "Please enter company name."
             )
             return false
-        }  else {
+        } else {
             return true
         }
     }

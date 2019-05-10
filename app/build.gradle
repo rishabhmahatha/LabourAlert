@@ -13,6 +13,10 @@ android {
         versionCode 2
         versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [onesignal_app_id               : "5748f53c-71c0-4bec-b7da-c7fcd06a9d8a",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
     }
     buildTypes {
         release {
@@ -24,13 +28,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //  Support
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-
 
     //  Image Loading using glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
@@ -41,7 +44,7 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.0.5'
 
     //Multidex
-    implementation'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:1.0.3'
 
     //InApp Purchase Dependency
     implementation 'com.android.billingclient:billing:1.2'
@@ -55,6 +58,10 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+//One signal dependency
+    implementation 'com.onesignal:OneSignal:3.10.8@aar'
+    implementation 'com.google.android.gms:play-services-gcm:16.1.0'
 
 
 }

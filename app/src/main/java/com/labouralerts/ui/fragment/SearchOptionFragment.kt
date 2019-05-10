@@ -137,7 +137,7 @@ class SearchOptionFragment : BaseFragments() {
                         goToSearchResultScreen(checkUserNameResponseModel)
                     } else {
                         Utils.showSnackBar(
-                            activity!!, fragment_search_btnSearch, true,
+                            activity!!, fragment_search_option_etSearch, true,
                             checkUserNameResponseModel.message!!
                         )
                     }
@@ -145,7 +145,7 @@ class SearchOptionFragment : BaseFragments() {
                 } else {
                     Utils.showSnackBar(
                         activity!!,
-                        fragment_search_btnSearch,
+                        fragment_search_option_etSearch,
                         true,
                         getString(R.string.alert_some_error)
                     )
@@ -158,7 +158,7 @@ class SearchOptionFragment : BaseFragments() {
                 progressDialog.dismiss()
                 Utils.showSnackBar(
                     activity!!,
-                    fragment_search_btnSearch,
+                    fragment_search_option_etSearch,
                     true,
                     getString(R.string.alert_some_error)
                 )

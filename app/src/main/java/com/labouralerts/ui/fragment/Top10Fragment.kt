@@ -197,21 +197,23 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
     //Top 10 company list item click
     override fun onSaveAlertClick(position: Int, view: View) {
         if (arrCompanyList[position].alertStatus.equals("Active")) {
-            arrCompanyList[position].alertStatus = ""
-            top10Adapter!!.notifyDataSetChanged()
+
             callDeleteAlertApi(
                 arrCompanyList[position].businessId!!,
                 "Company",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position,
+                true
             )
         } else {
-            arrCompanyList[position].alertStatus = "Active"
-            top10Adapter!!.notifyDataSetChanged()
+
             callSaveAlertApi(
                 arrCompanyList[position].businessId!!,
                 "Active",
                 "Company",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position,
+                true
             )
         }
 
@@ -219,21 +221,23 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
 
     override fun onSaveStateAlertClick(position: Int, view: View) {
         if (arrStateList[position].alertStatus.equals("Active")) {
-            arrStateList[position].alertStatus = ""
-            top10StateAdapter!!.notifyDataSetChanged()
+
             callDeleteAlertApi(
                 arrStateList[position].businessId!!,
                 "State",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position,
+                false
             )
         } else {
-            arrStateList[position].alertStatus = "Active"
-            top10StateAdapter!!.notifyDataSetChanged()
+
             callSaveAlertApi(
                 arrStateList[position].businessId!!,
                 "Active",
                 "State",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position,
+                false
             )
         }
 
@@ -307,7 +311,14 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
         })
     }
 
-    private fun callSaveAlertApi(businessId: String, status: String, service: String, userId: String) {
+    private fun callSaveAlertApi(
+        businessId: String,
+        status: String,
+        service: String,
+        userId: String,
+        position: Int,
+        isCompany: Boolean
+    ) {
         val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
 
         if (!activity!!.isFinishing) {
@@ -332,6 +343,15 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                     )
                     if (checkUserNameResponseModel.Success != null && checkUserNameResponseModel.Success == 1) {
                         Log.d("@@@", "Success")
+
+                        if (isCompany) {
+                            arrCompanyList[position].alertStatus = "Active"
+                            top10Adapter!!.notifyDataSetChanged()
+                        } else {
+                            arrStateList[position].alertStatus = "Active"
+                            top10StateAdapter!!.notifyDataSetChanged()
+                        }
+
                         Utils.showSnackBar(
                             activity!!, fragment_top_10_tv1M, false,
                             checkUserNameResponseModel.message!!
@@ -368,7 +388,13 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
         })
     }
 
-    private fun callDeleteAlertApi(businessId: String, service: String, userId: String) {
+    private fun callDeleteAlertApi(
+        businessId: String,
+        service: String,
+        userId: String,
+        position: Int,
+        isCompany: Boolean
+    ) {
         val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
 
         if (!activity!!.isFinishing) {
@@ -393,6 +419,13 @@ class Top10Fragment : BaseFragments(), Top10ListAdapter.OnItemClick, Top10StateL
                     )
                     if (checkUserNameResponseModel.Success != null && checkUserNameResponseModel.Success == 1) {
                         Log.d("@@@", "Success")
+                        if (isCompany) {
+                            arrCompanyList[position].alertStatus = ""
+                            top10Adapter!!.notifyDataSetChanged()
+                        } else {
+                            arrStateList[position].alertStatus = ""
+                            top10StateAdapter!!.notifyDataSetChanged()
+                        }
                         Utils.showSnackBar(
                             activity!!, fragment_top_10_btnCompanies, false,
                             checkUserNameResponseModel.message!!

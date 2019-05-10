@@ -1,11 +1,10 @@
 package com.labouralerts.ui.activity
 
-import android.arch.lifecycle.Observer
-
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import com.labouralerts.R
+import com.labouralerts.utils.Preference
 
 class SplashActivity : BaseActivity() {
     override fun initializeComponent() {
@@ -17,9 +16,14 @@ class SplashActivity : BaseActivity() {
      */
     private var handler: Handler? = null
     private val runnable = Runnable {
-        val intent = Intent(this, OptionActivity::class.java);
-        startActivity(intent)
-        finish()
+        if (Preference.instance.isLogin) {
+            goToHomeActivity()
+        } else {
+            val intent = Intent(this, OptionActivity::class.java);
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     override fun defineLayoutResource(): Int {
@@ -65,5 +69,15 @@ class SplashActivity : BaseActivity() {
         handler = Handler()
         val INTERVAL: Long = 2000
         handler!!.postDelayed(runnable, INTERVAL)
+    }
+
+
+    /**
+     * This method is to redirect user to home screen
+     */
+    private fun goToHomeActivity() {
+        val intent = Intent(this, HomeActivity::class.java);
+        startActivity(intent)
+        this.finish()
     }
 }

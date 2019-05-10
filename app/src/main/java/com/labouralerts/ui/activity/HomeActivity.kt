@@ -19,6 +19,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import android.util.Log
 import com.labouralerts.utils.Constants
+import com.labouralerts.utils.Preference
 
 class HomeActivity : BaseActivity(), RewardedVideoAdListener {
     var mDrawerToggle: ActionBarDrawerToggle? = null
@@ -156,7 +157,7 @@ class HomeActivity : BaseActivity(), RewardedVideoAdListener {
                 closeDrawer()
                 loadRewardedVideo()
                 val intent = Intent(this, TcPrivacyAboutUsActivity::class.java);
-                intent.putExtra(Constants.TITLE,"About Us")
+                intent.putExtra(Constants.TITLE, "About Us")
                 startActivity(intent)
             }
 
@@ -165,7 +166,7 @@ class HomeActivity : BaseActivity(), RewardedVideoAdListener {
                 closeDrawer()
                 loadRewardedVideo()
                 val intent = Intent(this, TcPrivacyAboutUsActivity::class.java);
-                intent.putExtra(Constants.TITLE,"Terms and Conditions")
+                intent.putExtra(Constants.TITLE, "Terms and Conditions")
                 startActivity(intent)
             }
 
@@ -256,6 +257,7 @@ class HomeActivity : BaseActivity(), RewardedVideoAdListener {
             .setCancelable(false)
             // positive button text and action
             .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
+                Preference.instance.clearAllPreferenceData()
                 val intent = Intent(this, LoginSignUpActivity::class.java)
                 startActivity(intent)
                 this.finish()

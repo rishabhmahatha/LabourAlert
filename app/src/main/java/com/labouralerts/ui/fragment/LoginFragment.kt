@@ -5,6 +5,7 @@ import android.content.Intent
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import com.google.firebase.iid.FirebaseInstanceId
 import com.google.gson.Gson
 import com.labouralerts.R
 import com.labouralerts.ui.activity.HomeActivity
@@ -41,7 +42,7 @@ class LoginFragment : BaseFragments() {
                     callLoginApi(
                         fragment_login_etEmail.text.toString().trim(),
                         fragment_login_etPassword.text.toString().trim(),
-                        "1564464646446"
+                        FirebaseInstanceId.getInstance().token!!
                     )
                 }
 

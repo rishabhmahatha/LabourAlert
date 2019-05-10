@@ -44,13 +44,13 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
         if (arguments != null && arguments!!.containsKey(Constants.BASIC_SEARCH_RESULT_MODEL)
             && arguments!!.containsKey(Constants.IS_BASIC_SEARCH_RESULT_MODEL)
         ) {
-            if(arguments!!.getBoolean(Constants.IS_BASIC_SEARCH_RESULT_MODEL)){
+            if (arguments!!.getBoolean(Constants.IS_BASIC_SEARCH_RESULT_MODEL)) {
                 basicSearchMainModel =
                     arguments!!.getSerializable(Constants.BASIC_SEARCH_RESULT_MODEL) as DataModel.BasicSearchMainModel?
                 arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.company!!)
                 arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.city!!)
                 arrListBasicSearchMainModel.addAll(basicSearchMainModel!!.data!!.state!!)
-            }else{
+            } else {
                 advanceSearchMainModel =
                     arguments!!.getSerializable(Constants.BASIC_SEARCH_RESULT_MODEL) as DataModel.AdvanceSearchMainModel?
                 arrListBasicSearchMainModel.addAll(advanceSearchMainModel!!.data!!)
@@ -109,21 +109,19 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
 
     override fun onSaveAlertClick(position: Int, view: View) {
         if (arrListBasicSearchMainModel[position].alertStatus.equals("Active")) {
-            arrListBasicSearchMainModel[position].alertStatus = ""
-            resultsAdapter!!.notifyDataSetChanged()
             callDeleteAlertApi(
                 arrListBasicSearchMainModel[position].businessId.toString(),
                 "Active",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position
             )
         } else {
-            arrListBasicSearchMainModel[position].alertStatus = "Active"
-            resultsAdapter!!.notifyDataSetChanged()
             callSaveAlertApi(
                 arrListBasicSearchMainModel[position].businessId.toString(),
                 "Active",
                 "Company",
-                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!
+                Preference.instance.getStringData(Preference.instance.PREF_USER_ID, "1")!!,
+                position
             )
         }
 
@@ -136,7 +134,7 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
         )
     }
 
-    private fun callSaveAlertApi(businessId: String, status: String, service: String, userId: String) {
+    private fun callSaveAlertApi(businessId: String, status: String, service: String, userId: String, position: Int) {
         val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
 
         if (!activity!!.isFinishing) {
@@ -161,6 +159,9 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
                     )
                     if (checkUserNameResponseModel.Success != null && checkUserNameResponseModel.Success == 1) {
                         Log.d("@@@", "Success")
+                        arrListBasicSearchMainModel[position].alertStatus = "Active"
+                        resultsAdapter!!.notifyDataSetChanged()
+
                         Utils.showSnackBar(
                             activity!!, fragment_search_result_rvSearchResult, false,
                             checkUserNameResponseModel.message!!
@@ -197,7 +198,7 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
         })
     }
 
-    private fun callDeleteAlertApi(businessId: String, service: String, userId: String) {
+    private fun callDeleteAlertApi(businessId: String, service: String, userId: String, position: Int) {
         val progressDialog = ProgressDialog(activity, R.style.ProgressDialog)
 
         if (!activity!!.isFinishing) {
@@ -222,6 +223,8 @@ class SearchResultFragment : BaseFragments(), ResultsAdapter.OnItemClick {
                     )
                     if (checkUserNameResponseModel.Success != null && checkUserNameResponseModel.Success == 1) {
                         Log.d("@@@", "Success")
+                        arrListBasicSearchMainModel[position].alertStatus = ""
+                        resultsAdapter!!.notifyDataSetChanged()
                         Utils.showSnackBar(
                             activity!!, fragment_search_result_rvSearchResult, false,
                             checkUserNameResponseModel.message!!
