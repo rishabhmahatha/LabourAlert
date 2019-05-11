@@ -19,6 +19,9 @@ class UpgradeAccountFragment : BaseFragments(), PurchasesUpdatedListener {
     }
 
     override fun initializeComponent(view: View) {
+        fragment_subscription_tvFreeTrial.setOnClickListener(this)
+        fragment_subscription_tv6Months.setOnClickListener(this)
+        fragment_subscription_tvOneYear.setOnClickListener(this)
 
     }
 
